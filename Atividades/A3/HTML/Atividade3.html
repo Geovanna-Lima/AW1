@@ -10,7 +10,7 @@
 
 <body>
     <!-- Título -->
-    <h1>Elementos HTML</h1>
+    <h1>Atividade 3: Elementos HTML</h1>
     <!-- Títulos são dividivos de h1 (mais importante) até h6 (menos importante)-->
     <h3>Tags utilizadas na Aula 1, 2 e 3</h3>
     <hr>
@@ -115,15 +115,57 @@
     <!-- Tabela com rowspan -->
     <h4>Tabela com Rowspan</h4>
     <table>
-        <tr>
-            <th>Nome:</th>
-            <td>Geovanna</td>
-        </tr>
-        <tr>
-            <th rowspan="2">Cor Favorita:</th>
-            <td>Azul</td>
-            <td>Preto</td>
-        </tr>
+        <thead>
+            <th>Segunda-Feira</th>
+            <th>Terça-Feira</th>
+            <th>Quarta-Feira</th>
+            <th>Quinta-Feir</th>
+            <th>Sexta-Feira</th>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td>LPL</td>
+                <td>AW1</td>
+                <td>LP3</td>
+                <td>LPL</td>
+                <td>LFS</td>
+            </tr>
+            <tr>
+                <td>LPL</td>
+                <td>AW1</td>
+                <td>LP3</td>
+                <td>LPL</td>
+                <td>LFS</td>
+            </tr>
+            <tr>
+                <td>FIL/SOC</td>
+                <td>AW1</td>
+                <td>LP3</td>
+                <td>FIS</td>
+                <td>MAT</td>
+            </tr>
+            <tr>
+                <td>FIL/SOC</td>
+                <td>LP2</td>
+                <td>TDS</td>
+                <td>FIS</td>
+                <td>MAT</td>
+            </tr>
+            <tr>
+                <td>QUI</td>
+                <td>LP2</td>
+                <td>TDS</td>
+                <td>HIS/GEO</td>
+                <td>BPS</td>
+            </tr>
+            <tr>
+                <td>QUI</td>
+                <td>LP2</td>
+                <td>TPO</td>
+                <td>HIS/GEO</td>
+                <td>BPS</td>
+            </tr>
+        </tbody>
     </table>
     <hr>
 
@@ -194,7 +236,7 @@
     <h4>Elemento em Linha</h4>
     <p>
         O "button" é um elemento em linha
-        <button>Enviar</button>
+        <button style="border: 1px solid red">Enviar</button>
     </p>
     <hr>
 
@@ -202,7 +244,7 @@
     <h4>Elemento em Bloco</h4>
     <p>
         O "adress" é um elemento em bloco
-    <address>
+    <address style="border: 1px solid red">
         <pre>
             Rua: Rua do Limoeiro
             Número: 756
@@ -215,6 +257,13 @@
 
     <!-- Iframe -->
     <h4>Iframe</h4>
+    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXaPK7HyVedIT" width="300" height="380"
+        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <p>
+        <a href="https://open.spotify.com/playlist/37i9dQZF1DXaPK7HyVedIT?si=b884ca6179664fe6"
+            target="iframe_a">Spotify</a>
+    </p>
+
     <iframe height="500" width="500" src="https://www.ifsp.edu.br" name="iframe_a"></iframe>
     <p>
         <a href="https://www.ifsp.edu.br" target="iframe_a">IFSP</a>
@@ -224,7 +273,8 @@
     <!-- Vídeo -->
     <h4>Vídeo</h4>
     <video width="400" height="240" controls autoplay>
-        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        <source
+            src="https://player.vimeo.com/external/520427407.hd.mp4?s=7500609bdb6b1cdeb339da1c378141da276bb959&profile_id=174">
     </video>
     <hr>
 
