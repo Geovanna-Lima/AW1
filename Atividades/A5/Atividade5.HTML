@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Dados Pessoais:</legend>
+            <label for="idNome">Nome:</label><br>
+            <input type="text" id="idNome" name="nome" placeholder="Insira seu nome" autocomplete="off" required><br>
+            <label for="idSobrenome">Sobrenome:</label><br>
+            <input type="text" id="idSobrenome" name="sobrenome" placeholder="Insira seu sobrenome" autocomplete="off"
+                required><br>
+            <label for="idData">Data de Nascimento:</label><br>
+            <input type="date" id="idData" name="data" min="1940-01-01" max="2021-06-27" required><br>
+            <label for="idLocalidade">Estado:</label><br>
+            <select name="estados" id="idLocalidade">
+                <option value="">Selecione</option>
+                <option value="ac">Acre (AC)</option>
+                <option value="al">Alagoas (AL)</option>
+                <option value="ap">Amapá (AP)</option>
+                <option value="am">Amazonas (AM)</option>
+                <option value="ba">Bahia (BA)</option>
+                <option value="ce">Ceará (CE)</option>
+                <option value="df">Distrito Federal (DF)</option>
+                <option value="es">Espírito Santo (ES)</option>
+                <option value="go">Goiás (GO)</option>
+                <option value="ma">Maranhão (MA)</option>
+                <option value="mt">Mato Grosso (MT)</option>
+                <option value="ms">Mato Grosso do Sul (MS)</option>
+                <option value="mg">Minas Gerais (MG)</option>
+                <option value="pa">Pará (PA)</option>
+                <option value="pb">Paraíba (PB)</option>
+                <option value="pr">Paraná (PR)</option>
+                <option value="pe">Pernambuco (PE)</option>
+                <option value="pi">Piauí (PI)</option>
+                <option value="rj">Rio de Janeiro (RJ)</option>
+                <option value="rn">Rio Grande do Norte (RN)</option>
+                <option value="rs">Rio Grande do Sul (RS)</option>
+                <option value="ro">Rondônia (RO)</option>
+                <option value="rr">Roraima (RR)</option>
+                <option value="sc">Santa Catarina (SC)</option>
+                <option value="sp">São Paulo (SP)</option>
+                <option value="se">Sergipe (SE)</option>
+                <option value="to">Tocantins (TO)</option>
+            </select><br>
+            <label for="idEmail">Email:</label><br>
+            <input type="email" id="idEmail" name="email" maxlength="50" autocomplete="off"
+                placeholder="Insira seu email" required><br>
+            <label for="idTel">Telefone:</label><br>
+            <input type="tel" id="idTel" name="telefone" placeholder="Insira seu telefone" autocomplete="off"
+                pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+                title="Número de telefone precisa ser no formato (XX) XXXX-XXXX" required><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Habilidades:</legend>
+            <label for="idEmpresa">Qual o ambiente em que gosta de trabalhar?</label><br>
+            <input id="idEmpresa" list="empresa">
+            <datalist id="empresa">
+                <option value="Tranquilo">
+                <option value="Movimentado">
+                <option value="Descontraído">
+            </datalist><br>
+            <label>Que tipo de Desenvolvedor você é?</label><br>
+            <input type="radio" name="desenvolvedor" id="idFront">
+            <label for="idFront">Front-end</label><br>
+            <input type="radio" name="desenvolvedor" id="idBack">
+            <label for="idBack">Back-end</label><br>
+            <input type="radio" name="desenvolvedor" id="idFull">
+            <label for="idFull">Fullstack</label><br>
+            <label>Quais tecnologias utiliza?</label><br>
+            <input type="checkbox" name="html" id="idHtml">
+            <label for="idHtml">HTML</label>
+            <input type="checkbox" name="css" id="idCss">
+            <label for="idCss">CSS</label>
+            <input type="checkbox" name="javaScript" id="idJavaS">
+            <label for="idJavaS">JavaScript</label>
+            <input type="checkbox" name="php" id="idPhp">
+            <label for="idPhp">PHP</label>
+            <input type="checkbox" name="csharp" id="idCsharp">
+            <label for="idCsharp">C#</label>
+            <input type="checkbox" name="python" id="idPython">
+            <label for="idPython">Python</label>
+            <input type="checkbox" name="java" id="idJava">
+            <label for="idJava">Java</label><br>
+            <label for="idTexto">Conte um pouco sobre você:</label><br>
+            <textarea name="texto" id="idTexto" cols="40" rows="10" placeholder="Escreva sua menssagem"
+                required></textarea><br>
+            <label for="idCampo">Este é um campo de leitura:</label><br>
+            <input type="text" name="campo" id="idCampo" placeholder="Campo de leitura" readonly>
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Apagar">
+    </form>
+</body>
+
+</html>
