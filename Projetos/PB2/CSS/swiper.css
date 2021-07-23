@@ -1,0 +1,71 @@
+/* Swiper */
+.swiper-container {
+    width: 100%;
+    padding-bottom: 3.125rem;
+    padding-top: 1.25rem;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 18.75rem;
+    height: 25rem;
+    border: 1px solid black;
+    border-radius: 1rem 0 1rem  0;
+    text-align: center;
+    padding: 2rem;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiper-slide i {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: clamp(4em, 3.65vw, 5em);
+    color: var(--base-color);
+}
+
+.swiper-slide.title {
+    font-size: 1.5em;
+    margin-bottom: 0.75rem;
+}
+
+.swiper-slide p {
+    font-family: "Poppins";
+    font-size: clamp(0.875em, 0.875vw, 1.25em);
+    font-weight: 300;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.swiper-pagination {
+    --swiper-theme-color:var(--base-color);
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+    border-radius: 1rem 0 1rem  0;
+    background-image: white;
+}
+
+.swiper-container-3d 
+.swiper-slide-shadow-right
+{
+    background-image:linear-gradient(to right,
+    rgba(207, 207, 207, 0.5),
+    rgba(253, 253, 253, 0.055)
+    );
+}
+
+.swiper-container-3d 
+.swiper-slide-shadow-left
+{
+    background-image:linear-gradient(to left,
+    rgba(207, 207, 207, 0.5),
+    rgba(253, 253, 253, 0.055)
+    );
+}
+
