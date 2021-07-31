@@ -38,6 +38,7 @@ body {
     color: var(--text-color);
     background: var(--base-color);
     -webkit-font-smoothing: antialiased;
+    min-width: 506px;
 }
 
 span {
@@ -70,31 +71,13 @@ span {
     font-family: "Poppins", sans-serif;
     font-weight: 700; 
     transition: background 0.3s;
-    margin-top: 1.9rem;
+    margin-top: 1rem;
 }
 
 .button:hover, 
 .buttonAbout:hover {
     background-color: var(--base-color);
     color: var(--text-color-light);
-}
-
-.divider-1 {
-    height: 1px;
-    background: linear-gradient(
-        270deg, 
-        hsla(var(--hue), 36%, 57%, 1),
-        hsla(var(--hue), 65%, 88%, 0.34)
-    );
-}
-
-.divider-2 {
-    height: 1px;
-    background: linear-gradient(
-        270deg, 
-        hsla(var(--hue), 65%, 88%, 0.34),
-        hsla(var(--hue), 36%, 57%, 1)
-    );
 }
 
 /* layout */
@@ -453,5 +436,11 @@ nav.show div.icon-x{
     .botao.home {
         justify-content: left;
         margin-left: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .botao.swiper {
+        height: 5rem;
     }
 }
