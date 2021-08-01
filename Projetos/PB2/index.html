@@ -67,9 +67,6 @@
 
         <section class="section" id="about">
             <div class="container grid">
-                <div class="image">
-                    <img src="IMG/minhaImagem.jpeg" alt="Geovanna Lima sorrindo" />
-                </div>
                 <div class="text">
                     <h2 class="title"><span>&lt</span>Geovanna Lima<span>/&gt</span></h2>
                     <p>
@@ -79,6 +76,9 @@
                         área e procurando me aprofundar cada vez mais nas linguagens de programação. A parte que mais me
                         interesso atualmente é front-end e futuramente pretendo atuar nessa área.
                     </p>
+                </div>
+                <div class="image">
+                    <img src="IMG/minhaImagem.jpeg" alt="Geovanna Lima sorrindo" />
                 </div>
                 <div class="botao">
                     <a class="buttonAbout" href="#projects">Meus Projetos</a>
@@ -151,29 +151,173 @@
                     <div class="card">
                         <h3 class="title">Competências</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                            distinctio neque blanditiis, dolorem aperiam nulla explicabo
-                            asperiores
+                            Tecnologias que utilizo no dia a dia e nos meus estudos.
                         </p>
+                        <div class="competencias">
+                            <div class="html">
+                                <i class="icon-html5"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="c">
+                                <i class="icon-c"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="css">
+                                <i class="icon-css3"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="bootstrap">
+                                <i class="icon-bootstrap"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="java">
+                                <i class="icon-java"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="javaScript">
+                                <i class="icon-javascript"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="mysql">
+                                <i class="icon-mysql"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="python">
+                                <i class="icon-python"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="php">
+                                <i class="icon-php"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="cSharp">
+                                <i class="icon-csharp"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="node">
+                                <i class="icon-node-dot-js"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card">
                         <h3 class="title">Ferramentas</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                            distinctio neque blanditiis, dolorem aperiam nulla explicabo
-                            asperiores
+                            Principais ferramentas que utilizo no desenvolvimento de novos projetos.
                         </p>
+                        <div class="ferramentas">
+                            <div class="figma">
+                                <i class="icon-figma"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="github">
+                                <i class="icon-github"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="visualStudioCode">
+                                <i class="icon-visualstudiocode"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="eclipse">
+                                <i class="icon-eclipse"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="visualStudio">
+                                <i class="icon-visualstudio"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                            <div class="git">
+                                <i class="icon-git"></i>
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="text">
+                    <h2 class="title"><span>&lt</span>Contato<span>/&gt</span></h2>
+                    <p>Entre em contato comigo, ou me encontre em alguma rede social.</p>
+                    <h3 class="title"><i class="icon-mail"></i>E-MAIL</h3>
+                    <p>
+                        geovannadasilvalima@gmail.com
+                    </p>
+                    <h3 class="title"><i class="icon-phone"></i>TELEFONE</h3>
+                    <p>
+                        (11)9 8910-9589
+                    </p>
+                    <h3 class="title">REDES SOCIAIS</h3>
+                    <p class="redeSocial">
+                        <a href="https://www.linkedin.com/in/geovanna-s-lima/"><i class="icon-linkedin"></i></a>
+                        <a href="https://github.com/Geovanna-Lima"><i class="icon-github"></i></a>
+                        <a href="https://codepen.io/geovanna-lima"><i class="icon-codepen"></i></a>
+                    </p>
+                </div>
+                <img class="carta" src="./IMG/contato.svg" alt="Carta sendo enviada">
+            </div>
+        </section>
+
+        <section class="section" id="form">
+            <div class="text">
+                <h2 class="title"><span>&lt</span>Formulário de Contato<span>/&gt</span></h2>
+            </div>
+            <div class="container">
+                <form>
+                    <label for="idNome">Nome:</label><br>
+                    <input type="text" id="idNome" name="nome" placeholder="Insira seu nome" autocomplete="off"
+                        required>
+                    <br><br>
+                    <label for="idTel">Telefone:</label><br>
+                    <input type="tel" id="idTel" name="telefone" placeholder="Insira seu telefone" autocomplete="off"
+                        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+                        title="Número de telefone precisa ser no formato (XX) XXXX-XXXX" required>
+                    <br><br>
+                    <label for="idEmail">E-mail:</label><br>
+                    <input type="email" id="idEmail" name="email" maxlength="50" autocomplete="off"
+                        placeholder="Insira seu email" required>
+                    <br><br>
+                    <label for="idAssunto">Assunto:</label><br>
+                    <input type="text" id="idAssunto" name="assunto" placeholder="Insira o assunto" autocomplete="off"
+                        required>
+                    <br><br>
+                    <label for="idTexto">Menssagem:</label><br>
+                    <textarea name="texto" id="idTexto" cols="40" rows="10" placeholder="Escreva sua menssagem"
+                        required></textarea>
+                    <br><br>
+                    <div class="opcao">
+                        <label for="idApagar"><i class="icon-trash"></i></label>
+                        <input type="reset" id="idApagar">
+
+                        <input class="botaoForm" type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <!-- Js Main -->
-    <script src="JS/main.js"></script>
+    <footer>
+        <div id="linha"></div>
+        <div class="descricao">
+            <h1><span>&lt</span>Geovanna Lima<span>/&gt</span></h1>
+            <p>© 2021 - Geovanna da Silva Lima</p>
+            <p class="textoFinal">Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="#home" class="backToTop"><i class="icon-arrow-up"></i></a>
+
     <!-- Swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="JS/swiper.js"></script>
+
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Js Main -->
+    <script src="JS/main.js"></script>
 </body>
 
 </html>
