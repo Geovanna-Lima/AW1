@@ -78,6 +78,10 @@
     background: var(--text-color-light);
 }
 
+.dark-mode.swiper-pagination-bullet-active {
+    background: var(--base-color);
+}
+
 /* Media Screen */
 @media screen and (min-width: 800px) {
     .swiper-slide {
