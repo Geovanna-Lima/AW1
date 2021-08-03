@@ -45,14 +45,15 @@ scrollReveal.reveal(
     #projects .text, #projects .swiper-container,
     #skills .text, #skills .card,
     #contact .text, #contact .title, #contact p, #contact .carta,
-    #form .text, #form .container,
-    footer #linha, footer .descricao`,
+    #form .text, #form .container, #form #idNome, #form #idTel, #form #idEmail,
+    #form #idAssunto, #form #idAssunto, #form #idTexto, #form .opcao, #form .botaoForm,
+    footer #linha, footer.descricao`,
     { interval: 100 }
 )
 
 /* Botão voltar para o topo */
 function backToTop() {
-    const backToTopButton = document.querySelector('.backToTop')
+    const backToTopButton = document.querySelector('.back-to-top')
 
     if (window.scrollY >= 560) {
         backToTopButton.classList.add('show')
@@ -65,4 +66,24 @@ function backToTop() {
 window.addEventListener('scroll', function () {
     changeHeaderWhenScroll()
     backToTop()
+})
+
+/* Dark Mode */
+const $html = document.querySelector('html')
+const $checkbox = document.querySelector('#switch')
+const $swiper = document.querySelectorAll('.swiper-slide')
+const $swiperBullet = document.querySelectorAll('.swiper-pagination-bullet')
+
+$checkbox.addEventListener('change', function () {
+    $html.classList.toggle('dark-mode')
+
+    console.log($swiper)
+    $swiper.forEach(element => {
+        element.classList.toggle('dark-mode')
+    });
+
+    console.log($swiperBullet)
+    $swiperBullet.forEach(element => {
+        element.classList.toggle('dark-mode')
+    });
 })

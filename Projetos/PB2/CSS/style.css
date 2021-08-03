@@ -24,9 +24,26 @@ a {
     --base-color-second: hsl(var(--hue) 65% 88%);
     --base-section: hsl(0, 0%, 95%);
     --title-color: hsl(var(--hue) 0% 0%);
-    --text-color: hsl(var(--hue) 0% 0%);
+    --text-color: hsl(0, 0%, 0%);
     --text-color-light: hsl(0, 0%, 100%);
     --body-color: hsl(0, 0%, 100%);
+    --card-color: hsl(0, 0%, 100%);
+}
+
+.dark-mode:root {
+    --header-height: 4.5rem;
+
+    /* colors */
+    --hue: 324;
+    /* HSL color mode */
+    --base-color: hsl(var(--hue) 52% 69%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-section: hsl(60, 3%, 6%);
+    --title-color: hsl(var(--hue) 0% 0%);
+    --text-color: hsl(var(--hue) 0% 0%);
+    --text-color-light: hsl(0, 0%, 100%);
+    --body-color: hsl(0, 0%, 0%);
+    --card-color: hsl(180, 2%, 20%);
 }
 
 /* base */
@@ -36,7 +53,7 @@ html {
 
 body {
     color: var(--text-color);
-    background: white;
+    background: var(--body-color);
     -webkit-font-smoothing: antialiased;
     min-width: 506px;
 }
@@ -77,7 +94,7 @@ span {
 .button:hover, 
 .buttonAbout:hover {
     background-color: var(--base-color);
-    color: var(--text-color-light);
+    color: var(--body-color);
 }
 
 /* layout */
@@ -116,7 +133,7 @@ span {
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: var(--text-color-light);
+    background-color: var(--body-color);
     width: 100%;
 }
 
@@ -174,7 +191,7 @@ nav ul li a::after{
     content: "";
     width: 0%;
     height: 2px;
-    background: var(--text-color-light);
+    background: var(--body-color);
 
     position: absolute;
     left: 0;
@@ -261,7 +278,7 @@ nav.show div.icon-x{
 
 /* home */
 #home {
-    background-color: var(--text-color-light);
+    background-color: var(--body-color);
     display: inline-flex;
     align-items: center; 
     overflow: hidden;
@@ -401,7 +418,7 @@ nav.show div.icon-x{
 
 /* Projetos */
 #projects {
-    background-color: var(--text-color-light);
+    background-color: var(--body-color);
 }
 
 #projects .text h2 {
@@ -435,7 +452,7 @@ nav.show div.icon-x{
     border-bottom: 0.25rem solid var(--base-color);
     border-radius: 0.625rem;
     text-align: center;
-    background-color: var(--text-color-light);
+    background-color: var(--card-color);
 }
 
 .card .title {
@@ -716,7 +733,7 @@ footer {
 }
 
 /* Back to top */
-.backToTop {
+.back-to-top {
     background: var(--base-color);
     color: var(--text-color-light);
 
@@ -738,10 +755,42 @@ footer {
    transform: translateY(100%);
 }
 
-.backToTop.show {
+.back-to-top.show {
     visibility: visible;
     opacity: 1;
     transform: translate(0);
+}
+
+/* Dark */
+.dark-mode.section#home,
+.dark-mode.section#projects,
+.dark-mode.section#contact,
+.dark-mode.section#form {
+    background-color: var(--body-color); 
+}
+
+.dark-mode.section#about,
+.dark-mode.section#skills {
+    background-color: var(--base-section); 
+}
+
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode label,
+.dark-mode .logo
+{
+    color: var(--text-color-light);
+}
+
+.dark-mode a.titleMenu,
+.icon-x.toggle {
+    color: var(--body-color);
+}
+
+.dark-mode.card {
+    background-color: var(--card-color);
 }
 
 /* Media Screen */

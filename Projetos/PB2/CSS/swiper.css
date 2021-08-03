@@ -10,7 +10,7 @@
     background-size: cover;
     width: 18.75rem;
     height: 30rem;
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
     border-radius: 1rem 0 1rem  0;
     text-align: center;
     padding: 2rem;
@@ -67,6 +67,15 @@
     rgba(207, 207, 207, 0.5),
     rgba(253, 253, 253, 0.055)
     );
+}
+
+/* Dark Mode */
+.dark-mode.swiper-slide {
+    border: 1px solid var(--text-color-light);
+}
+
+.dark-mode.swiper-pagination-bullet {
+    background: var(--text-color-light);
 }
 
 /* Media Screen */
