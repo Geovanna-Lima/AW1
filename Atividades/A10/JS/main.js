@@ -18,10 +18,10 @@ for (const link of links) {
 }
 
 /* mudar o header da página quando der scroll */
-function changeHeaderWhenScroll() {
-    const header = document.querySelector('#header')
-    const navHeight = header.offsetHeight
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
 
+function changeHeaderWhenScroll() {
     if (window.scrollY >= navHeight) {
         // scroll é maior que a altura do header
         header.classList.add('scroll')
@@ -30,6 +30,22 @@ function changeHeaderWhenScroll() {
         header.classList.remove('scroll')
     }
 }
+
+/* Testimonials carousel slider swiper */
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+    breakpoints: {
+        767: {
+            slidesPerView: 2,
+            setWrapperSize: true
+        }
+    }
+})
 
 /* ScrollReveal: Mostrar elementos quando der scroll na página */
 const scrollReveal = ScrollReveal({
@@ -40,14 +56,13 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-    `#home .text, #home .botao,
-    #about .image, #about .text, #about .botao,
-    #projects .text, #projects .swiper-container,
-    #skills .text, #skills .card,
-    #contact .text, #contact .title, #contact p, #contact .carta,
-    #form .text, #form .container, #form #idNome, #form #idTel, #form #idEmail,
-    #form #idAssunto, #form #idAssunto, #form #idTexto, #form .opcao, #form .botaoForm,
-    footer #linha, footer.descricao`,
+    `#home .image, #home .text,
+  #about .image, #about .text,
+  #services header, #services .card,
+  #testimonials header, #testimonials .testimonials
+  #contact .text, #contact .links,
+  footer .brand, footer .social
+  `,
     { interval: 100 }
 )
 
@@ -93,24 +108,4 @@ window.addEventListener('scroll', function () {
     changeHeaderWhenScroll()
     backToTop()
     activateMenuAtCurrentSection()
-})
-
-/* Dark Mode */
-const $html = document.querySelector('html')
-const $checkbox = document.querySelector('#switch')
-const $swiper = document.querySelectorAll('.swiper-slide')
-const $swiperBullet = document.querySelectorAll('.swiper-pagination-bullet')
-
-$checkbox.addEventListener('change', function () {
-    $html.classList.toggle('dark-mode')
-
-    console.log($swiper)
-    $swiper.forEach(element => {
-        element.classList.toggle('dark-mode')
-    });
-
-    console.log($swiperBullet)
-    $swiperBullet.forEach(element => {
-        element.classList.toggle('dark-mode')
-    });
 })

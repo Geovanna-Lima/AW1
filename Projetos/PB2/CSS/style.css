@@ -183,15 +183,16 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a:hover {
-    font-weight: 600;
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--base-color); 
 }
 
-nav ul li a::after{
+nav ul li a::after {
     content: "";
     width: 0%;
     height: 2px;
-    background: var(--body-color);
+    background: var(--base-color);
 
     position: absolute;
     left: 0;
@@ -200,7 +201,8 @@ nav ul li a::after{
     transition: width 0.2s;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after,
+nav ul li a.active::after {
     width: 100%;
 }
 
@@ -274,6 +276,10 @@ nav.show div.icon-x{
     font: 400 1.875em "Poppins", sans-serif;
     color: var(--text-color-light);
     -webkit-font-smoothing: auto;
+}
+
+.dark-mode a.titleMenu:hover {
+    color: var(--base-color);
 }
 
 /* Botão Dark */
@@ -714,7 +720,7 @@ input {
     padding-left: 20px;
 }
 
-textarea{
+textarea {
     background: #F3F3F3;
     border: 1px solid #000000;
     border-radius: 10px; 
@@ -877,6 +883,75 @@ footer {
 
     .section#projects {
         height: 98vh;
+    }
+
+    .titleMenu {
+        color: var(--text-color);
+    }
+
+    .check {
+        background-color: var(--text-color);
+        width: 40px;
+        height: 20px;
+    }
+
+    .check:before,
+    .check:after  {
+        width: 16px;
+        height: 16px;
+    }
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .menu ul li a.titleMenu {
+        font: 400 1rem "Poppins", sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    nav .menu ul li a.titleMenu.active {
+        font-weight: bold;
+        -webkit-font-smoothing: auto;
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+
+    nav .menu ul li a.titleMenu:hover, 
+    /*Dark-mode*/
+    .dark-mode nav .menu ul li a.titleMenu:hover {
+        color: var(--base-color);
+    }
+
+    .dark-mode nav .menu ul li a.titleMenu {
+        color: var(--text-color-light);
+    } 
+
+    .dark-mode input[type="checkbox"]:checked ~ .check {
+        background-color: var(--text-color-light);
+    }
+
+    /* About e Contact*/
+    #about .container {
+        grid-auto-flow: column;
+        width: fit-content;
+    }
+
+    #about .image {
+        order: 0;
+    }
+
+    #about .text {
+        order: 1;
     }
 }
 
