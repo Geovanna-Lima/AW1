@@ -273,34 +273,47 @@
                 <h2 class="title"><span>&lt</span>Formulário de Contato<span>/&gt</span></h2>
             </div>
             <div class="container">
-                <form>
-                    <label for="idNome">Nome:</label><br>
-                    <input type="text" id="idNome" name="nome" placeholder="Insira seu nome" autocomplete="off"
-                        required>
-                    <br><br>
-                    <label for="idTel">Telefone:</label><br>
-                    <input type="tel" id="idTel" name="telefone" placeholder="Insira seu telefone" autocomplete="off"
-                        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
-                        title="Número de telefone precisa ser no formato (XX) XXXX-XXXX" required>
-                    <br><br>
-                    <label for="idEmail">E-mail:</label><br>
-                    <input type="email" id="idEmail" name="email" maxlength="50" autocomplete="off"
-                        placeholder="Insira seu email" required>
-                    <br><br>
-                    <label for="idAssunto">Assunto:</label><br>
-                    <input type="text" id="idAssunto" name="assunto" placeholder="Insira o assunto" autocomplete="off"
-                        required>
-                    <br><br>
-                    <label for="idTexto">Menssagem:</label><br>
-                    <textarea name="texto" id="idTexto" cols="40" rows="10" placeholder="Escreva sua menssagem"
-                        required></textarea>
-                    <br><br>
-                    <div class="opcao">
-                        <label for="idApagar"><i class="icon-trash"></i></label>
-                        <input type="reset" id="idApagar">
-
-                        <input class="botaoForm" type="submit" value="Enviar">
+                <form action="" method="POST">
+                    <div class="formLado">
+                        <fieldset>
+                            <label for="idNome">Nome:</label><br>
+                            <input type="text" id="idNome" name="nome" placeholder="Insira seu nome" autocomplete="off"
+                                required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="idTel">Telefone:</label><br>
+                            <input type="tel" id="idTel" name="telefone" placeholder="Insira seu telefone"
+                                autocomplete="off" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+                                title="Número de telefone precisa ser no formato (XX) XXXX-XXXX" required>
+                        </fieldset>
                     </div>
+                    <div class="formAbaixo">
+                        <div class="idEmail">
+                            <label for="idEmail">E-mail:</label><br>
+                            <input type="email" id="idEmail" name="email" maxlength="50" autocomplete="off"
+                                placeholder="Insira seu email" required>
+                        </div>
+
+                        <div class="idAssunto">
+                            <label for="idAssunto">Assunto:</label><br>
+                            <input type="text" id="idAssunto" name="assunto" placeholder="Insira o assunto"
+                                autocomplete="off" required>
+                        </div>
+
+                        <div class="idTexto">
+                            <label for="idTexto">Menssagem:</label><br>
+                            <textarea name="texto" id="idTexto" cols="40" rows="10" placeholder="Escreva sua menssagem"
+                                required></textarea>
+                        </div>
+
+                        <div class="opcao">
+                            <label for="idApagar"><i class="icon-trash"></i></label>
+                            <input type="reset" id="idApagar">
+
+                            <input class="botaoForm" type="submit" value="Enviar">
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </section>

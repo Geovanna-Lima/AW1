@@ -345,6 +345,11 @@ input[type="checkbox"]:checked ~ .check:after {
     transform: translateX(0px); 
 }
 
+/* header */
+.dark-mode #header.scroll {
+    box-shadow: 0px 0px 12px rgba(219, 219, 219, 0.199);
+}
+
 /* home */
 #home {
     background-color: var(--body-color);
@@ -516,6 +521,11 @@ input[type="checkbox"]:checked ~ .check:after {
     margin-top: 1.5rem;
 }
 
+#skills .grid {
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
 .cards.grid {
     gap: 1.5rem;
 }
@@ -537,10 +547,6 @@ input[type="checkbox"]:checked ~ .check:after {
 
 .card p{
     margin-bottom: 1rem;
-}
-
-#skills .grid {
-    gap: 1rem;
 }
 
 .competencias, 
@@ -665,6 +671,7 @@ input[type="checkbox"]:checked ~ .check:after {
 #contact .container {
     justify-content: center;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 #contact .text h2 {
@@ -672,7 +679,7 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 
 #contact h3.title  {
-    font-size: clamp(1.4em, 2.5vw,3em);
+    font-size: clamp(1.4em, 1vw,2em);
     margin-bottom: 0.75rem;
     font-weight: 600;
     text-align: center;
@@ -703,10 +710,6 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 
 /* Formulario */
-.section#form {
-    height: 90vh;
-}
-
 #form .container {
     margin-left: 3.06rem;
     margin-right: 3.06rem;
@@ -715,7 +718,7 @@ input[type="checkbox"]:checked ~ .check:after {
 label {
     font-size: clamp(1.4em, 1.25vw, 2em);
     font-family: "Poppins", sans-serif;
-    font-weight: 600; 
+    font-weight: 600;
 }
 
 input {
@@ -742,6 +745,11 @@ textarea:focus, input:focus, select:focus {
     outline: 0;
 } 
 
+fieldset {
+    border: 0;
+    margin-bottom: 1rem;
+}
+
 label i {
     font-size: clamp(1.8em, 2vw, 1em);
     color: var(--base-color);
@@ -749,6 +757,16 @@ label i {
 
 input#idApagar {
     display: none;
+}
+
+.formLado{
+    margin-bottom: 1rem;
+}
+
+.idAssunto,
+.idTexto,
+.idEmial {
+    margin-top: 1rem;
 }
 
 .botaoForm {
@@ -769,6 +787,7 @@ input#idApagar {
 .opcao {
     display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 ::placeholder {
@@ -1007,7 +1026,6 @@ footer {
 
     #skills .grid#ferramentas {
         margin-top: 2rem;
-        margin-bottom: 2rem;
     }
 
     /* contact */
@@ -1020,11 +1038,15 @@ footer {
         padding-right: 10rem;
     }
 
+    #contact p{
+        max-width: 40rem;
+    }
+
     .carta {
         height: 25.75rem;
         padding-right: 10rem;
         margin-top: auto;
-        margin-bottom: 0;
+        margin-bottom: auto;
     }
 
     #contact .text {
@@ -1035,6 +1057,20 @@ footer {
     #form .container {
         margin-left: 15rem;
         margin-right: 15rem;
+    }
+
+    .formLado {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #form fieldset {
+        width: 49%;
+        display: inline;
+    }
+
+    fieldset {
+        margin-bottom: 0rem;
     }
 }
 
