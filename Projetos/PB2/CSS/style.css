@@ -110,7 +110,6 @@ span {
 
 .section {
     width: 100%;
-    height: 100vh;
 }
 
 .section .title {
@@ -355,6 +354,11 @@ input[type="checkbox"]:checked ~ .check:after {
     justify-content: center;
 }
 
+.section#home {
+    height: 100vh;
+    padding: 0 0;
+}
+
 #home .image {
     position: relative;
 }
@@ -420,6 +424,10 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 
 /* About */
+.section#about {
+    padding: 3rem 0;
+}
+
 #about {
     background: var(--base-section);
 }
@@ -502,10 +510,6 @@ input[type="checkbox"]:checked ~ .check:after {
 /* Skill */
 #skills {
     background: var(--base-section);
-}
-
-#skills.section {
-    height: 115vh;
 }
 
 #skills .text h2 {
@@ -693,6 +697,9 @@ input[type="checkbox"]:checked ~ .check:after {
 
 .carta {
     height: 18.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
 }
 
 /* Formulario */
@@ -881,10 +888,6 @@ footer {
         height: 20.31rem;
     }
 
-    .section#projects {
-        height: 98vh;
-    }
-
     .titleMenu {
         color: var(--text-color);
     }
@@ -940,31 +943,104 @@ footer {
         background-color: var(--text-color-light);
     }
 
-    /* About e Contact*/
+    /* about */
+    #about {
+        align-items: center;
+        justify-content: center;
+        display: flex
+    }
+
     #about .container {
         grid-auto-flow: column;
-        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #about .image {
         order: 0;
+        padding-right: 10rem;
+    }
+
+    #about .image img {
+        width: 28.88rem;
+        height: 28.88rem;
     }
 
     #about .text {
         order: 1;
+        max-width: 40rem;
+    }
+
+    #about .text p {
+        text-align: justify;
+    }
+
+    /* projects */
+    #projects .text p {
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* skills */
+    .card {
+        grid-auto-flow: column;
+    }
+
+    .competencias, 
+    .ferramentas {
+        padding-right: 4rem;
+    }
+
+    .cardTexto {
+        padding-left: 4rem;
+    }
+
+    .card .title {
+        text-align: left;
+    }
+
+    .card p {
+        max-width: 30rem;
+        text-align: left;
+    }
+
+    #skills .grid#ferramentas {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* contact */
+    #contact .container {
+        grid-auto-flow: column;
+    }
+
+    #contact.image {
+        order: 0;
+        padding-right: 10rem;
+    }
+
+    .carta {
+        height: 25.75rem;
+        padding-right: 10rem;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+
+    #contact .text {
+        order: 1;
+    }
+
+    /* Form */
+    #form .container {
+        margin-left: 15rem;
+        margin-right: 15rem;
     }
 }
 
 /* large devices 1023 > */
 
 /* large devices: 800 >= 1023 */
-@media screen and (min-width: 800px) and (max-width: 1023px){
-    
-    .section#projects {
-        height: 105vh;
-    }  
-}
-
 /* large devices: 800 > */
 @media screen and (min-width: 800px) {
     
@@ -993,8 +1069,5 @@ footer {
     .competencias, 
     .ferramentas {
         grid-template-columns: repeat(3, 1fr);
-    }
-    #skills.section {
-        height: 125vh;
     }
 }
