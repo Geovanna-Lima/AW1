@@ -512,6 +512,65 @@ input[type="checkbox"]:checked ~ .check:after {
     gap: 0rem;
 }
 
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 1;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal > div {
+    width: 34.38rem;
+    position: relative;
+    margin: 35% auto;
+    padding: 0.9375rem 1.25rem;
+    background: var(--text-color-light);
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px
+}
+
+.modal p {
+    font-family: "Poppins";
+    font-size: clamp(0.875em, 0.875vw, 1.25em);
+    font-weight: 300;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.modal h4 {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.fechar {
+    position: absolute;
+    width: 30px;
+    right: -15px;
+    top: -20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    background: var(--base-color);
+    border-radius: 50%;
+    font-size: 16px;
+    color: var(--text-color-light);
+
+}
+
 /* Skill */
 #skills {
     background: var(--base-section);
@@ -904,7 +963,7 @@ footer {
     }
 
     .botao.swiper {
-        height: 20.31rem;
+        height: 10.31rem;
     }
 
     .titleMenu {
@@ -1001,9 +1060,14 @@ footer {
         margin-right: auto;
     }
 
+    .modal > div {
+        margin: 14% auto;
+    }
+
     /* skills */
     .card {
-        grid-auto-flow: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .competencias, 
@@ -1017,6 +1081,11 @@ footer {
 
     .card .title {
         text-align: left;
+    }
+
+    #ferramentas {
+        display: grid;
+        grid-auto-columns: auto auto;
     }
 
     .card p {

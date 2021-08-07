@@ -76,14 +76,9 @@ function activateMenuAtCurrentSection() {
         const checkpointEnd = checkpoint <= sectionTop + sectionHeight
 
         if (checkpointStart && checkpointEnd) {
-            document
-                .querySelector('nav ul li a[href*=' + sectionId + ']')
-                .classList.add('active')
-        }
-        else {
-            document
-                .querySelector('nav ul li a[href*=' + sectionId + ']')
-                .classList.remove('active')
+            document.querySelector('nav ul li a[href*=' + sectionId + ']').classList.add('active')
+        } else {
+            document.querySelector('nav ul li a[href*=' + sectionId + ']').classList.remove('active')
         }
     }
 }
