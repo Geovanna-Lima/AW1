@@ -185,7 +185,8 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: var(--base-color); 
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
 }
 
 nav ul li a::after {
@@ -980,6 +981,11 @@ footer {
         top: 0;
     }
 
+    nav ul li a:hover,
+    nav ul li a.active {
+        color: var(--base-color); 
+    }
+
     nav .menu ul {
         display: flex;
         gap: 2rem;
@@ -988,6 +994,10 @@ footer {
     nav .menu ul li a.titleMenu {
         font: 400 1rem "Poppins", sans-serif;
         -webkit-font-smoothing: antialiased;
+    }
+
+    nav .menu ul li a.titleMenu.active {
+        font-weight: bold;
     }
 
     .dark-mode nav .menu ul li a.titleMenu.active {
