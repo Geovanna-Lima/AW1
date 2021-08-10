@@ -55,7 +55,7 @@ body {
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased;
-    min-width: 506px;
+    min-width: 400px;
 }
 
 span {
@@ -92,7 +92,8 @@ span {
 }
 
 .button:hover, 
-.buttonAbout:hover {
+.buttonAbout:hover,
+.botaoForm:hover {
     background-color: var(--base-color);
     color: var(--body-color);
 }
@@ -365,27 +366,16 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 
 #home .image {
-    position: relative;
-}
-
-#home .image::before {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: var(--base-color-second);
-    position: absolute;
-    top: -16.8%;
-    left: 16.7%;
-    z-index: 0;
+    display: none;
 }
 
 #home .image img {
     position: relative;
-    right: 2.93rem;
+    width: 45rem;
 }
 
-#home .image img, #home .image::before {
-    border-radius: 0.25rem;
+#home .imageDark {
+    display: none;
 }
 
 #home .text {
@@ -534,7 +524,7 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 
 .modal > div {
-    width: 34.38rem;
+    width: 70%;
     position: relative;
     margin: 35% auto;
     padding: 0.9375rem 1.25rem;
@@ -558,17 +548,16 @@ input[type="checkbox"]:checked ~ .check:after {
 
 .fechar {
     position: absolute;
-    width: 30px;
-    right: -15px;
-    top: -20px;
+    width: 1.875rem;
+    right: -0.9375rem;
+    top: -1.25rem;
     text-align: center;
-    line-height: 30px;
-    margin-top: 5px;
+    line-height: 1.875rem;
+    margin-top: 0.3125rem;
     background: var(--base-color);
     border-radius: 50%;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--text-color-light);
-
 }
 
 /* Skill */
@@ -599,7 +588,7 @@ input[type="checkbox"]:checked ~ .check:after {
 }
 
 .card .title {
-    font-size: clamp(1.7em, 2.5vw,3em);
+    font-size: clamp(2em, 2vw,3em);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
@@ -939,6 +928,22 @@ footer {
     color: var(--text-color-light);
 }
 
+.dark-mode #home .image {
+    display: none;
+}
+
+.dark-mode #home .imageDark {
+    display: flex;
+    order: 1;
+    padding-left: 15rem;
+}
+
+.dark-mode #home .imageDark img {
+    position: relative;
+    width: 45rem;
+    display: none;
+}
+
 .dark-mode a.titleMenu,
 .icon-x.toggle {
     color: var(--body-color);
@@ -948,18 +953,91 @@ footer {
     background-color: var(--card-color);
 }
 
+.dark-mode .modal > div {
+    background: var(--base-section);
+}
+
+.dark-mode .modal {
+    background: rgba(170, 170, 170, 0.507);
+}
+
+.dark-mode .modal h4 {
+    color: var(--text-color-light);
+}
+
+.dark-mode .button:hover,
+.dark-mode .buttonAbout:hover,
+.dark-mode .botaoForm:hover {
+    color: var(--text-color-light);
+}
+
 /* Media Screen */
 /* extra large devices: 1200 > */
 @media screen and (min-width: 1200px) {
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .menu ul li a.titleMenu {
+        font: 400 1rem "Poppins", sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .dark-mode nav .menu ul li a.titleMenu.active {
+        font-weight: bold;
+        -webkit-font-smoothing: auto;
+        color: var(--base-color);
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+
+    nav .menu ul li a.titleMenu:hover, 
+    /*Dark-mode*/
+    .dark-mode nav .menu ul li a.titleMenu:hover {
+        color: var(--base-color);
+    }
+
+    .dark-mode nav .menu ul li a.titleMenu {
+        color: var(--text-color-light);
+    } 
+
+    .dark-mode input[type="checkbox"]:checked ~ .check {
+        background-color: var(--text-color-light);
+    }
+
+    .dark-mode #home .imageDark img {
+        display: flex;
+    }
+    
     #home {
         justify-content: left;
         padding-left: 8rem;
         width: 100%;
     }
 
-    .botao.home {
-        justify-content: left;
-        margin-left: 1.5rem;
+    #home .container {
+        display: flex;
+    }
+
+    #home .image {
+        display: flex;
+        order: 1;
+        padding-left: 15rem;
+    }
+
+    #home .text {
+        order: 0;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .botao.swiper {
@@ -980,45 +1058,6 @@ footer {
     .check:after  {
         width: 16px;
         height: 16px;
-    }
-
-    nav .menu {
-        opacity: 1;
-        visibility: visible;
-        top: 0;
-    }
-
-    nav .menu ul {
-        display: flex;
-        gap: 2rem;
-    }
-
-    nav .menu ul li a.titleMenu {
-        font: 400 1rem "Poppins", sans-serif;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    nav .menu ul li a.titleMenu.active {
-        font-weight: bold;
-        -webkit-font-smoothing: auto;
-    }
-
-    nav .icon-menu {
-        display: none;
-    }
-
-    nav .menu ul li a.titleMenu:hover, 
-    /*Dark-mode*/
-    .dark-mode nav .menu ul li a.titleMenu:hover {
-        color: var(--base-color);
-    }
-
-    .dark-mode nav .menu ul li a.titleMenu {
-        color: var(--text-color-light);
-    } 
-
-    .dark-mode input[type="checkbox"]:checked ~ .check {
-        background-color: var(--text-color-light);
     }
 
     /* about */
@@ -1060,19 +1099,25 @@ footer {
         margin-right: auto;
     }
 
+    /* modal */
     .modal > div {
         margin: 14% auto;
+        width: 50%;
     }
 
     /* skills */
+    #skills .grid#ferramentas {
+        margin-top: 2rem;
+    }
+
     .card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .competencias, 
-    .ferramentas {
-        padding-right: 4rem;
+    .card p {
+        max-width: 30rem;
+        text-align: left;
     }
 
     .cardTexto {
@@ -1083,18 +1128,14 @@ footer {
         text-align: left;
     }
 
+    .competencias, 
+    .ferramentas {
+        padding-right: 4rem;
+    }
+
     #ferramentas {
         display: grid;
         grid-auto-columns: auto auto;
-    }
-
-    .card p {
-        max-width: 30rem;
-        text-align: left;
-    }
-
-    #skills .grid#ferramentas {
-        margin-top: 2rem;
     }
 
     /* contact */
@@ -1112,7 +1153,7 @@ footer {
     }
 
     .carta {
-        height: 25.75rem;
+        height: 30.75rem;
         padding-right: 10rem;
         margin-top: auto;
         margin-bottom: auto;
@@ -1148,7 +1189,6 @@ footer {
 /* large devices: 800 >= 1023 */
 /* large devices: 800 > */
 @media screen and (min-width: 800px) {
-    
     #home .text span.nome {
         display: inline;
     }  
