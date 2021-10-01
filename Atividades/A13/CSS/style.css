@@ -1,6 +1,10 @@
-* GLOBAL */
+/* GLOBAL */
 :root{
     --dark-blue: hsl(227, 28%, 29%);
+    --light-blue: #969cb3;
+    --green: #49aa26;
+    --light-green: #3dd705;
+    --red: #e92929;
 }
 
 *{
@@ -45,12 +49,12 @@ h2{
 
 /* LINKS & BUTTONS */
 a {
-   color: #49aa26;
+   color: var(--green);
     text-decoration: none;
 }
 
 a:hover {
-    color: #3dd705;
+    color: var(--light-green)
 }
 
 button {
@@ -60,7 +64,7 @@ button {
     border: none;
 
     color: #fff;
-    background: hsl(227, 28%, 29%);
+    background: var(--dark-blue);
 
     padding: 0;
 
@@ -70,7 +74,7 @@ button {
 }
 
 button:hover {
-    background: hsl(228, 28%, 41%);
+    background: var(--dark-blue);
 }
 
 .button.new {
@@ -79,9 +83,9 @@ button:hover {
 }
 
 .button.cancel {
-    color: #e92929;
+    color: var(--red);
     border-radius: 0.25rem;
-    border: 2px #e92929 solid;
+    border: 2px var(--red) solid;
 
     height: 50px;
 
@@ -94,7 +98,7 @@ button:hover {
 
 /* HEADER */
 header{
-    background: hsl(227, 28%, 29%);
+    background: var(--dark-blue);
     padding: 2rem 0 10rem;
     text-align: center;
 }
@@ -122,7 +126,7 @@ header{
 
     margin-bottom: 2rem;
 
-    color: hsl(227, 28%, 29%);
+    color: var(--dark-blue);
 }
 
 .card h3{
@@ -141,7 +145,7 @@ header{
 }
 
 .card.total{
-    background: #49aa26;
+    background: var(--green);
     color: #fff;
 }
 
@@ -155,7 +159,7 @@ header{
 #data-table{
     width: 100%;
     border-spacing: 0 0.5rem;
-    color: #969cb3;
+    color: var(--light-blue);
 }
 
 table thead tr th:first-child, 
@@ -197,7 +201,7 @@ td.income{
 }
 
 td.expense{
-    color: #e92929;
+    color: var(--red);
 }
 
 /* MODAL */
@@ -281,7 +285,7 @@ input#amout {
 footer{
     text-align: center;
     padding: 4rem 0 2rem;
-    color: hsl(227, 28%, 29%);
+    color: var(--dark-blue);
     opacity: 0.6;
 }
 
