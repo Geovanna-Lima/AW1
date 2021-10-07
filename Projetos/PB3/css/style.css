@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+
+/* ===== TITLE SITE===== */
+.titleSite {
+   display: inline-flex; 
+}
+
+.titleSite h1 {
+    font-weight: 200;
+    margin-top: 15px;
+    margin-left: 13px;
+    color: #353434;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    margin-top: 15px;
+    width: 60px;
+}
+
+/* ===== NAVIGATION ===== */
+.navigation {
+    position: relative;
+    height: 100vh;
+    background: #7ce2e6;
+    width: 83px;
+    box-shadow: 10px 0 0 #e6a19f;
+    border-left: 10px solid #7ce2e6;
+    overflow-x: hidden;
+    transition: 0.4s;
+    justify-content: left;
+}
+
+.navigation:hover {
+    width: 300px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 95px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: #353434;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul li a .icon i {
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li.active {
+    background: #e6a19f;
+}
+
+.navigation ul li.active::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #7ce2e6;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 #e6a19f;
+}
+
+.navigation ul li.active::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #7ce2e6;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #e6a19f;
+}
+
+
+/* ===== INPUT ===== */
+input{
+    outline: none;
+}
+
+input[type="text"],
+input[type="number"] {
+    font-size: 16px;
+    width: 90%;
+    padding: 10px;
+    text-indent: 5px;
+    margin: 10px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    padding: 30px;
+}
+
+.content button {
+    border: none;
+    outline: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    background: pink;
+}
+
+.content ul {
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.content .valorFinal {
+    text-align: center;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.content .descp{
+    text-align:center;
+    text-orientation:justify;
+    font-size: 12px;
+}
+
+.content p {
+    text-align: left;
+}
+
+.content .convert {
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 340px;
+    padding: 30px;
+    line-height: 20px;
+    position: relative;
+    box-shadow: 0 0 5px rgb(200, 174, 189);
+    transition: 0.3s;
+    border-radius: 5%;
+}
+
+.content .title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* ===== QUADRO ===== */
+.convertMoeda {
+    display: inline;
+}
+
+.convertTemp {
+    display: none;
+}
+
+.convertMedidas {
+    display: none;
+}
+
+.convertTempo {
+    display: none;
+}
+
+/* ===== MEDIA SCREEN ===== */
+@media screen and (max-width: 800px) {
+    .navigation {
+        
+    }
+}
