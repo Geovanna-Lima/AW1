@@ -13,40 +13,51 @@ body {
 }
 
 /* ===== HEADER ===== */
-
-/* ===== TITLE SITE===== */
-.titleSite {
-   display: inline-flex; 
+header {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 4.69rem;
+    display: inline-flex; 
+    background: #9FEFF3;
+    width: 100%;
 }
 
-.titleSite h1 {
+/* title h1 */
+header h1 {
     font-weight: 200;
     margin-top: 15px;
     margin-left: 13px;
     color: #353434;
 }
 
-/* ===== LOGO ===== */
+/* logo */
 .logo {
     margin-top: 15px;
     width: 60px;
 }
 
-/* ===== NAVIGATION ===== */
+/* navigation */
+aside {
+    position: absolute;
+    left: 0;
+    top: 4.69rem;
+}
+
 .navigation {
     position: relative;
     height: 100vh;
-    background: #7ce2e6;
+    background: #9FEFF3;
     width: 83px;
-    box-shadow: 10px 0 0 #e6a19f;
-    border-left: 10px solid #7ce2e6;
+    box-shadow: 10px 0 0 #FFA9A6;
+    border-left: 10px solid #9FEFF3;
     overflow-x: hidden;
     transition: 0.4s;
     justify-content: left;
 }
 
 .navigation:hover {
-    width: 300px;
+    width: 250px;
 }
 
 .navigation ul {
@@ -55,7 +66,7 @@ body {
     left: 0;
     width: 100%;
     padding-left: 5px;
-    padding-top: 95px;
+    padding-top: 20px;
 }
 
 .navigation ul li {
@@ -101,7 +112,7 @@ body {
 }
 
 .navigation ul li.active {
-    background: #e6a19f;
+    background: #FFA9A6;
 }
 
 .navigation ul li.active::before {
@@ -111,9 +122,9 @@ body {
     right: 0;
     width: 30px;
     height: 30px;
-    background: #7ce2e6;
+    background: #9FEFF3;
     border-radius: 50%;
-    box-shadow: 15px 15px 0 #e6a19f;
+    box-shadow: 15px 15px 0 #FFA9A6;
 }
 
 .navigation ul li.active::after {
@@ -123,13 +134,24 @@ body {
     right: 0;
     width: 30px;
     height: 30px;
-    background: #7ce2e6;
+    background: #9FEFF3;
     border-radius: 50%;
-    box-shadow: 15px -15px 0 #e6a19f;
+    box-shadow: 15px -15px 0 #FFA9A6;
 }
 
+/* ===== MAIN ===== */
+main {
+    display: grid;
+    place-items: center;
+}
 
-/* ===== INPUT ===== */
+/* content */
+.content {
+    display: flex;
+    align-items: center;
+}
+
+/* input */
 input{
     outline: none;
 }
@@ -147,18 +169,7 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
-/* ===== CONTENT ===== */
-.content {
-    display: flex;
-    justify-content: space-evenly;
-    width: auto;
-    text-align: center;
-    flex-wrap: wrap;
-    margin-top: 0px;
-    padding: 30px;
-}
-
-.content button {
+/* .content button {
     border: none;
     outline: none;
     color: black;
@@ -189,7 +200,7 @@ input[type="number"] {
 }
 
 .content .descp{
-    text-align:center;
+    text-align: center;
     text-orientation:justify;
     font-size: 12px;
 }
@@ -214,11 +225,15 @@ input[type="number"] {
     font-size: 26px;
     font-weight: bold;
     margin: 10px;
-}
+} */
 
 /* ===== QUADRO ===== */
 .convertMoeda {
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
 .convertTemp {
@@ -231,7 +246,7 @@ input[type="number"] {
 
 .convertTempo {
     display: none;
-}
+} 
 
 /* ===== MEDIA SCREEN ===== */
 @media screen and (max-width: 800px) {
