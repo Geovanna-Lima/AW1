@@ -14,7 +14,7 @@ list.forEach((item) =>
 
 /* ===== CONVERSOR ===== */
 //conversor de moedas
-function conversorMoeda() {
+function convertMoney() {
     //variaveis
     var moeda = document.getElementById("moeda").value;
     var moeda2 = document.getElementById("moeda2").value;
@@ -71,7 +71,7 @@ function conversorMoeda() {
 }
 
 //conversor de temperatura
-function conversorTemp() {
+function convertTemperature() {
     //variaveis
     var temp = document.getElementById("temp").value;
     var temp2 = document.getElementById("temp2").value;

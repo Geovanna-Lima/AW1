@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -46,18 +46,13 @@ aside {
 
 .navigation {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 4.69rem);
     background: #9FEFF3;
-    width: 83px;
+    width: 250px;
     box-shadow: 10px 0 0 #FFA9A6;
     border-left: 10px solid #9FEFF3;
     overflow-x: hidden;
-    transition: 0.4s;
     justify-content: left;
-}
-
-.navigation:hover {
-    width: 250px;
 }
 
 .navigation ul {
@@ -140,117 +135,98 @@ aside {
 }
 
 /* ===== MAIN ===== */
-main {
+.content {
     display: grid;
     place-items: center;
-}
-
-/* content */
-.content {
-    display: flex;
-    align-items: center;
-}
-
-/* input */
-input{
-    outline: none;
-}
-
-input[type="text"],
-input[type="number"] {
-    font-size: 16px;
-    width: 90%;
-    padding: 10px;
-    text-indent: 5px;
-    margin: 10px;
-}
-
-.input-container {
-    margin-bottom: 20px;
-}
-
-/* .content button {
-    border: none;
-    outline: none;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
-    background: pink;
+    padding: 3rem;
+    box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
 }
 
-.content ul {
-    list-style: none;
-    text-align: center;
-    text-decoration: none;
-}
-
-.content .valorFinal {
-    text-align: center;
-    margin: 5px;
-    font-weight: bold;
-    font-size: 22px;
-}
-
-.content .descp{
-    text-align: center;
-    text-orientation:justify;
-    font-size: 12px;
-}
-
-.content p {
-    text-align: left;
-}
-
-.content .convert {
-    margin: 5px;
-    margin-bottom: 50px;
-    width: 340px;
-    padding: 30px;
-    line-height: 20px;
-    position: relative;
-    box-shadow: 0 0 5px rgb(200, 174, 189);
-    transition: 0.3s;
-    border-radius: 5%;
-}
-
-.content .title {
-    font-size: 26px;
-    font-weight: bold;
-    margin: 10px;
-} */
-
-/* ===== QUADRO ===== */
-.convertMoeda {
-    display: flex;
+/* content conversion */
+.convertMoney {
+    display: inline;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
+    justify-content: center;  
 }
 
-.convertTemp {
+.convertTemperature,
+.convertMeasures,
+.convertTime {
     display: none;
 }
 
-.convertMedidas {
-    display: none;
+/* title conversion */
+.titleConvert {
+    margin-bottom: 2rem;
 }
 
-.convertTempo {
-    display: none;
-} 
+.titleConvert h2,
+.titleConvert p {
+    text-align: center;
+}
+
+/* input value */
+.inputValue {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    align-items: end;
+}
+
+input {
+    width: 280px;
+    height: calc(1.5em + .75rem + 2px);
+    border-radius: 3px;
+    border: 1px solid black;
+    padding-left: 0.5rem;
+}
+
+/* button */
+#revert, 
+#convert {
+    width: 34px;
+    height: 34px;
+    background-color: #34999E;
+    border-radius: 3px;
+    border: none;
+}
+
+/* icon */
+.fas.fa-undo-alt, 
+.fas.fa-exchange-alt {
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+/* title result */
+h4.titleResult{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* card deck */
+.cardDeck {
+    display: flex;
+    line-height: 2;
+}
+
+/* card */
+.card {
+    border: 1px solid #353434;
+    border-radius: 3px;
+    padding: 1.25rem;
+    margin-top: 15px;
+    width: 500px;
+}
+
+.card.two {
+    margin-left: 1rem;
+}
 
 /* ===== MEDIA SCREEN ===== */
 @media screen and (max-width: 800px) {
-    .navigation {
-        
-    }
+    
 }

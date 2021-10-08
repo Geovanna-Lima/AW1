@@ -16,136 +16,271 @@
         <h1>Convertendo</h1>
     </header>
 
-    <div class="content">
-        <!-- ASIDE -->
-        <aside>
-            <!-- NAV -->
-            <nav>
-                <div class="navigation">
-                    <ul>
-                        <li class="list active">
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-coins"></i></span>
-                                <span class="title">Moedas</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-thermometer-three-quarters"></i></span>
-                                <span class="title">Temperatura</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-ruler-combined"></i></span>
-                                <span class="title">Medidas</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-hourglass-half"></i></span>
-                                <span class="title">Tempo</span>
-                            </a>
-                        </li>
-                    </ul>
+    <!-- ASIDE -->
+    <aside>
+        <!-- NAV -->
+        <nav>
+            <div class="navigation">
+                <ul>
+                    <li class="list active">
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-coins"></i></span>
+                            <span class="title">Moedas</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-thermometer-three-quarters"></i></span>
+                            <span class="title">Temperatura</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-ruler-combined"></i></span>
+                            <span class="title">Medidas</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-hourglass-half"></i></span>
+                            <span class="title">Tempo</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="content">
+        <div class="convertMoney">
+
+            <div class="titleConvert">
+                <h2>Moeda</h2>
+                <p>Conversão de moedas (dólar, libra, real e euro)</p>
+            </div>
+
+            <div class="inputValue">
+
+                <div class="value">
+                    <p>Valor:</p>
+                    <input type="number" min="0" step=".01" placeholder="Insira o valor">
                 </div>
-            </nav>
-        </aside>
 
-        <!-- MAIN -->
-        <main>
-            <div class="convertMoeda">
-                <h2 class="title">Moeda</h2>
-                <p class="descp">Conversão de moedas (dólar, libra, real e euro)</p>
-                <p>Converter:</p>
-                <input type="number" id="converter" placeholder="Insira o valor">
-                <input list="tipos" type="text" placeholder="Escolha uma moeda" id="moeda">
-                <datalist id="tipos">
-                    <option value="Dólar">
-                    <option value="Libra">
-                    <option value="Real">
-                    <option value="Euro">
-                </datalist>
-                <p>Para:</p>
-                <input list="tipos" type="text" placeholder="Digite a moeda" id="moeda2">
-                <p class="valorFinal" id="valorFinal"></p>
+                <div class="conversion">
+                    <p>Converter de:</p>
+                    <input list="types" placeholder="Escolha uma moeda">
+                    <datalist id="types">
+                        <option value="Dólar">
+                        <option value="Libra">
+                        <option value="Real">
+                        <option value="Euro">
+                    </datalist>
+                </div>
 
-                <button type="submit" onclick=conversorMoeda()>Converter</button>
+                <button id="revert" type="submit" onclick=convertMoney()><i class="fas fa-exchange-alt"></i></button>
+
+                <div class="result">
+                    <p>Para:</p>
+                    <input list="types" placeholder="Escolha uma moeda">
+                </div>
+
+                <button id="convert" type="submit" onclick=convertMoney()><i class="fas fa-undo-alt"></i></button>
 
             </div>
 
-            <div class="convertTemp">
-                <h2 class="title">Temperatura</h2>
-                <p class="descp">Conversão de temperatura (fahrenheit, celcius e kelvin)</p>
+            <div class="result">
+                <h4 class="titleResult">Resultado da conversão:</h4>
 
-                <p>Converter:</p>
-                <input type="number" id="converterTemp" placeholder="Insira o valor">
-                <input list="tiposTemp" type="text" placeholder="Escolha uma temperatura" id="temp">
-                <datalist id="tiposTemp">
-                    <option value="Fahrenheit">
-                    <option value="Celsius">
-                    <option value="Kelvin">
-                </datalist>
-                <p>Para:</p>
-                <input list="tiposTemp" type="text" placeholder="Digite a temperatura" id="temp2">
-                <p class="valorFinal" id="valorFinalTemp"></p>
+                <div class="cardDeck">
+                    <div class="card">
+                        <p>Conversão de:</p>
+                        <p>Valor a converter:</p>
+                    </div>
 
-                <button type="submit" onclick=conversorTemp()>Converter</button>
-
-            </div>
-
-            <div class="convertMedidas">
-                <h2 class="title">Medidas</h2>
-                <p class="descp">
-                    Conversão de medidas (quilômetro, hectômetro, decâmetro, metro, decímetro, centímetro e
-                    milímetro)
-                </p>
-                <ul>
-                    <li>
-                        <p>Converter:</p>
-                        <input type="number" id="converterComp" placeholder="Insira o valor">
-                        <input list="tiposComp" type="text" placeholder="Escolha uma medida" id="comp">
-                        <datalist id="tiposComp">
-                            <option value="Quilômetro">
-                            <option value="Hectômetro">
-                            <option value="Decâmetro">
-                            <option value="Metro">
-                            <option value="Decímetro">
-                            <option value="Centímetro">
-                            <option value="Milímetro">
-                        </datalist>
+                    <div class="card two">
                         <p>Para:</p>
-                        <input list="tiposComp" type="text" placeholder="Digite o comprimento" id="comp2">
-                        <p class="valorFinal" id="valorFinalComp"></p>
-                    </li>
-                    <li> <button type="submit" onclick=conversorComp()>Converter</button></li>
-                </ul>
+                        <p>Resultado da conversão:</p>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="convertTempo">
-                <h2 class="title">Tempo</h2>
-                <p class="descp">
-                    Conversão de tempo (horas, minutos e segundos)
-                </p>
-                <ul>
-                    <li>
-                        <p>Converter:</p>
-                        <input type="number" id="converterTem" placeholder="Insira o valor">
-                        <input list="tiposTem" type="text" placeholder="Escolha uma medida" id="tem">
-                        <datalist id="tiposTem">
-                            <option value="Horas">
-                            <option value="Minutos">
-                            <option value="Segundos">
-                        </datalist>
-                        <p>Para:</p>
-                        <input list="tiposTem" type="text" placeholder="Digite o comprimento" id="tem2">
-                        <p class="valorFinal" id="valorFinalTem"></p>
-                    </li>
-                    <li> <button type="submit" onclick=conversorComp()>Converter</button></li>
-                </ul>
+        </div>
+
+        <div class="convertTemperature">
+
+            <div class="titleConvert">
+                <h2>Temperatura</h2>
+                <p>Conversão de temperatura (fahrenheit, celcius e kelvin)</p>
             </div>
-        </main>
-    </div>
+
+            <div class="inputValue">
+
+                <div class="value">
+                    <p>Valor:</p>
+                    <input type="number" step="1" placeholder="Insira o valor">
+                </div>
+
+                <div class="conversion">
+                    <p>Converter de:</p>
+                    <input list="types" placeholder="Escolha uma temperatura">
+                    <datalist id="types">
+                        <option value="Fahrenheit">
+                        <option value="Celsius">
+                        <option value="Kelvin">
+                    </datalist>
+                </div>
+
+                <button id="revert" type="submit" onclick=convertTemperature()><i
+                        class="fas fa-exchange-alt"></i></button>
+
+                <div class="result">
+                    <p>Para:</p>
+                    <input list="types" placeholder="Escolha uma temperatura">
+                </div>
+
+                <button id="convert" type="submit" onclick=convertTemperature()><i class="fas fa-undo-alt"></i></button>
+
+            </div>
+
+            <div class="result">
+                <h4 class="titleResult">Resultado da conversão:</h4>
+
+                <div class="cardDeck">
+                    <div class="card">
+                        <p>Conversão de:</p>
+                        <p>Valor a converter:</p>
+                    </div>
+
+                    <div class="card two">
+                        <p>Para:</p>
+                        <p>Resultado da conversão:</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="convertMeasures">
+
+            <div class="titleConvert">
+                <h2>Medidas</h2>
+                <p>Conversão de medidas (quilômetro, hectômetro, decâmetro, metro, decímetro, centímetro e milímetro)
+                </p>
+            </div>
+
+            <div class="inputValue">
+
+                <div class="value">
+                    <p>Valor:</p>
+                    <input type="number" min="0" step=".01" placeholder="Insira o valor">
+                </div>
+
+                <div class="conversion">
+                    <p>Converter de:</p>
+                    <input list="types" placeholder="Escolha uma medida">
+                    <datalist id="types">
+                        <option value="Quilômetro">
+                        <option value="Hectômetro">
+                        <option value="Decâmetro">
+                        <option value="Metro">
+                        <option value="Decímetro">
+                        <option value="Centímetro">
+                        <option value="Milímetro">
+                    </datalist>
+                </div>
+
+                <button id="revert" type="submit" onclick=convertMeasures()><i class="fas fa-exchange-alt"></i></button>
+
+                <div class="result">
+                    <p>Para:</p>
+                    <input list="types" placeholder="Escolha uma medida">
+                </div>
+
+                <button id="convert" type="submit" onclick=convertMeasures()><i class="fas fa-undo-alt"></i></button>
+
+            </div>
+
+            <div class="result">
+                <h4 class="titleResult">Resultado da conversão:</h4>
+
+                <div class="cardDeck">
+                    <div class="card">
+                        <p>Conversão de:</p>
+                        <p>Valor a converter:</p>
+                    </div>
+
+                    <div class="card two">
+                        <p>Para:</p>
+                        <p>Resultado da conversão:</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="convertTime">
+
+            <div class="titleConvert">
+                <h2>Tempo</h2>
+                <p>Conversão de tempo (horas, minutos e segundos)</p>
+            </div>
+
+            <div class="inputValue">
+
+                <div class="value">
+                    <p>Valor:</p>
+                    <input type="number" step="1" placeholder="Insira o valor">
+                </div>
+
+                <div class="conversion">
+                    <p>Converter de:</p>
+                    <input list="types" placeholder="Escolha uma temperatura">
+                    <datalist id="types">
+                        <option value="Horas">
+                        <option value="Minutos">
+                        <option value="Segundos">
+                    </datalist>
+                </div>
+
+                <button id="revert" type="submit" onclick=convertTime()><i class="fas fa-exchange-alt"></i></button>
+
+                <div class="result">
+                    <p>Para:</p>
+                    <input list="types" placeholder="Escolha uma temperatura">
+                </div>
+
+                <button id="convert" type="submit" onclick=convertTime()><i class="fas fa-undo-alt"></i></button>
+
+            </div>
+
+            <div class="result">
+                <h4 class="titleResult">Resultado da conversão:</h4>
+
+                <div class="cardDeck">
+                    <div class="card">
+                        <p>Conversão de:</p>
+                        <p>Valor a converter:</p>
+                    </div>
+
+                    <div class="card two">
+                        <p>Para:</p>
+                        <p>Resultado da conversão:</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
 
     <script src="../JS/main.js"></script>
     <script src="https://kit.fontawesome.com/3eecc79a6a.js" crossorigin="anonymous"></script>
