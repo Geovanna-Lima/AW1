@@ -12,6 +12,39 @@ list.forEach((item) =>
     item.addEventListener('click', activeLink)
 )
 
+/* ===== DISPLAY ===== */
+function mostrarConversao() {
+    var convertMoney = document.getElementById("convertMoney")
+    var convertTemperature = document.getElementById("convertTemperature")
+    var convertMeasures = document.getElementById("convertMeasures")
+    var convertTime = document.getElementById("convertTime")
+
+    if (convertMoney.style.display === "inline") {
+        convertMoney.style.display = "inline"
+        convertTemperature.style.display = "none"
+        convertMeasures.style.display = "none"
+        convertTime.style.display = "none"
+    }
+    if (convertTemperature.style.display === "inline") {
+        convertMoney.style.display = "none"
+        convertTemperature.style.display = "inline"
+        convertMeasures.style.display = "none"
+        convertTime.style.display = "none"
+    }
+    if (convertMeasures.style.display === "inline") {
+        convertMoney.style.display = "none"
+        convertTemperature.style.display = "none"
+        convertMeasures.style.display = "inline"
+        convertTime.style.display = "none"
+    }
+    if (convertTime.style.display === "inline") {
+        convertMoney.style.display = "none"
+        convertTemperature.style.display = "none"
+        convertMeasures.style.display = "none"
+        convertTime.style.display = "inline"
+    }
+}
+
 /* ===== CONVERSOR ===== */
 //conversor de moedas
 function convertMoney() {

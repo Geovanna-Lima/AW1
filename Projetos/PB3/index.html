@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertendo</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
     <!-- HEADER -->
     <header>
-        <img class="logo" src="../IMG/image.png" alt="Logo convertendo">
+        <img class="logo" src="./IMG/image.png" alt="Logo convertendo">
         <h1>Convertendo</h1>
     </header>
 
@@ -23,25 +23,25 @@
             <div class="navigation">
                 <ul>
                     <li class="list active">
-                        <a href="#">
+                        <a href="#" onclick="mostrarConversao()">
                             <span class="icon"><i class="fas fa-coins"></i></span>
                             <span class="title">Moedas</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#">
+                        <a href="#" onclick="mostrarConversao()">
                             <span class="icon"><i class="fas fa-thermometer-three-quarters"></i></span>
                             <span class="title">Temperatura</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#">
+                        <a href="#" onclick="mostrarConversao()">
                             <span class="icon"><i class="fas fa-ruler-combined"></i></span>
                             <span class="title">Medidas</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#">
+                        <a href="#" onclick="mostrarConversao()">
                             <span class="icon"><i class="fas fa-hourglass-half"></i></span>
                             <span class="title">Tempo</span>
                         </a>
@@ -53,7 +53,7 @@
 
     <!-- MAIN -->
     <main class="content">
-        <div class="convertMoney">
+        <div id="convertMoney">
 
             <div class="titleConvert">
                 <h2>Moeda</h2>
@@ -109,7 +109,7 @@
 
         </div>
 
-        <div class="convertTemperature">
+        <div id="convertTemperature">
 
             <div class="titleConvert">
                 <h2>Temperatura</h2>
@@ -165,7 +165,7 @@
 
         </div>
 
-        <div class="convertMeasures">
+        <div id="convertMeasures">
 
             <div class="titleConvert">
                 <h2>Medidas</h2>
@@ -225,7 +225,7 @@
 
         </div>
 
-        <div class="convertTime">
+        <div id="convertTime">
 
             <div class="titleConvert">
                 <h2>Tempo</h2>
@@ -282,7 +282,7 @@
 
     </main>
 
-    <script src="../JS/main.js"></script>
+    <script src="./JS/main.js"></script>
     <script src="https://kit.fontawesome.com/3eecc79a6a.js" crossorigin="anonymous"></script>
 </body>
 

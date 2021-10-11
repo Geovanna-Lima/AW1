@@ -146,15 +146,15 @@ aside {
 }
 
 /* content conversion */
-.convertMoney {
+#convertMoney {
     display: inline;
     align-items: center;
     justify-content: center;  
 }
 
-.convertTemperature,
-.convertMeasures,
-.convertTime {
+#convertTemperature,
+#convertMeasures,
+#convertTime {
     display: none;
 }
 
