@@ -1,3 +1,19 @@
+/* ===== MENU ===== */
+const menu = document.querySelectorAll('.fa-bars')
+const nav = document.querySelector('.navigation')
+const content = document.querySelector('.content')
+
+function activeMenu() {
+    menu.forEach((item) =>
+        item.classList.add('show'),
+        nav.style.width = "250px",
+        nav.style.transition = "0.4s",
+        content.style.width = 'calc(100% - 250px)',
+        content.style.transition = "0.4s",
+    )
+    this.classList.remove('show')
+}
+
 /* ===== NAVEGAÇÃO ===== */
 const list = document.querySelectorAll('.list')
 

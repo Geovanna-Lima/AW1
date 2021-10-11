@@ -12,14 +12,16 @@
 <body>
     <!-- HEADER -->
     <header>
-        <img class="logo" src="./IMG/image.png" alt="Logo convertendo">
+        <i class="fas fa-bars" onclick="activeMenu()"></i>
+        <!-- 
+        <img class="logo" src="./IMG/image.png" alt="Logo convertendo"> -->
         <h1>Convertendo</h1>
     </header>
 
     <!-- ASIDE -->
     <aside>
         <!-- NAV -->
-        <nav>
+        <nav id="menu">
             <div class="navigation">
                 <ul>
                     <li class="list active">
@@ -31,7 +33,7 @@
                     <li class="list">
                         <a href="#" onclick="mostrarConversao()">
                             <span class="icon"><i class="fas fa-thermometer-three-quarters"></i></span>
-                            <span class="title">Temperatura teste</span>
+                            <span class="title">Temperatura</span>
                         </a>
                     </li>
                     <li class="list">

@@ -48,7 +48,7 @@ aside {
     position: relative;
     height: calc(100vh - 4.69rem);
     background: #9FEFF3;
-    width: 250px;
+    width: 83px;
     box-shadow: 10px 0 0 #FFA9A6;
     border-left: 10px solid #9FEFF3;
     overflow-x: hidden;
@@ -80,7 +80,8 @@ aside {
     color: #353434;
 }
 
-.navigation ul li a .icon {
+.navigation ul li a .icon,
+.fas.fa-bars {
     position: relative;
     min-width: 60px;
     height: 60px;
@@ -91,10 +92,12 @@ aside {
     align-items: center;
 }
 
-.navigation ul li a .icon i {
+.navigation ul li a .icon i,
+.fas.fa-bars {
     position: relative;
     font-size: 1.5rem;
     z-index: 1;
+    color: #353434;
 }
 
 .navigation ul li a .title {
@@ -139,13 +142,20 @@ aside {
     display: grid;
     place-items: center;
     margin-left: auto;
-    margin-right: auto;
+    
+    width: calc(100% - 83px);
+}
+
+/* content conversion */
+#convertTemperature,
+#convertMeasures,
+#convertTime,
+#convertMoney  {
     border-radius: 5px;
     padding: 3rem;
     box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
 }
 
-/* content conversion */
 #convertMoney {
     display: inline;
     align-items: center;
@@ -199,6 +209,12 @@ input {
 .fas.fa-exchange-alt {
     color: #FFFFFF;
     font-size: 15px;
+}
+
+.fas.fa-bars {
+    border-left: 10px solid #9FEFF3;
+    width: 75px;
+    top: 0.6rem;
 }
 
 /* title result */
