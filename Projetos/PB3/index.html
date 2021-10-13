@@ -122,25 +122,24 @@
 
                 <div class="value">
                     <p>Valor:</p>
-                    <input type="number" step="1" placeholder="Insira o valor">
+                    <input id="converterTemp" type="number" step="1" placeholder="Insira o valor">
                 </div>
 
                 <div class="conversion">
                     <p>Converter de:</p>
-                    <input list="types" placeholder="Escolha uma temperatura">
-                    <datalist id="types">
+                    <input id="temp" list="typesTemp" placeholder="Escolha uma temperatura">
+                    <datalist id="typesTemp">
                         <option value="Fahrenheit">
                         <option value="Celsius">
                         <option value="Kelvin">
                     </datalist>
                 </div>
 
-                <button id="revert" type="submit" onclick=convertTemperature()><i
-                        class="fas fa-exchange-alt"></i></button>
+                <button id="revert" type="submit"><i class="fas fa-exchange-alt"></i></button>
 
                 <div class="result">
                     <p>Para:</p>
-                    <input list="types" placeholder="Escolha uma temperatura">
+                    <input id="temp2" list="typesTemp" placeholder="Escolha uma temperatura">
                 </div>
 
                 <button id="convert" type="submit" onclick=convertTemperature()><i class="fas fa-undo-alt"></i></button>
@@ -152,13 +151,13 @@
 
                 <div class="cardDeck">
                     <div class="card">
-                        <p>Conversão de:</p>
-                        <p>Valor a converter:</p>
+                        <p>Conversão de: <span id="tempa"></span></p>
+                        <p>Valor a converter: <span id="converterTempa"></span></p>
                     </div>
 
                     <div class="card two">
-                        <p>Para:</p>
-                        <p>Resultado da conversão:</p>
+                        <p>Para: <span id="tempa2"></span></p>
+                        <p>Resultado da conversão: <span id="valorFinalTemp"></span> </p>
                     </div>
 
                 </div>
@@ -238,24 +237,24 @@
 
                 <div class="value">
                     <p>Valor:</p>
-                    <input type="number" step="1" placeholder="Insira o valor">
+                    <input id="converterTempo" type="number" step="1" placeholder="Insira o valor">
                 </div>
 
                 <div class="conversion">
                     <p>Converter de:</p>
-                    <input list="types" placeholder="Escolha uma temperatura">
-                    <datalist id="types">
+                    <input id="tempo" list="typesMea" placeholder="Escolha uma temperatura">
+                    <datalist id="typesMea">
                         <option value="Horas">
                         <option value="Minutos">
                         <option value="Segundos">
                     </datalist>
                 </div>
 
-                <button id="revert" type="submit" onclick=convertTime()><i class="fas fa-exchange-alt"></i></button>
+                <button id="revert" type="submit"><i class="fas fa-exchange-alt"></i></button>
 
                 <div class="result">
                     <p>Para:</p>
-                    <input list="types" placeholder="Escolha uma temperatura">
+                    <input id="tempo2" list="typesMea" placeholder="Escolha uma temperatura">
                 </div>
 
                 <button id="convert" type="submit" onclick=convertTime()><i class="fas fa-undo-alt"></i></button>
@@ -267,13 +266,13 @@
 
                 <div class="cardDeck">
                     <div class="card">
-                        <p>Conversão de:</p>
-                        <p>Valor a converter:</p>
+                        <p>Conversão de: <span id="tempoa"></span></p>
+                        <p>Valor a converter: <span id="converterTempoa"></span></p>
                     </div>
 
                     <div class="card two">
-                        <p>Para:</p>
-                        <p>Resultado da conversão:</p>
+                        <p>Para: <span id="tempoa2"></span></p>
+                        <p>Resultado da conversão: <span id="valorFinalTempo"></span> </p>
                     </div>
 
                 </div>

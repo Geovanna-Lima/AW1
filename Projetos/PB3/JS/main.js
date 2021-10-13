@@ -11,6 +11,7 @@ function activeMenu() {
         content.style.width = 'calc(100% - 15.625rem)',
         content.style.transition = "0.4s",
     )
+    /* ver com prof */
     this.classList.remove('show')
 }
 
@@ -29,6 +30,7 @@ list.forEach((item) =>
 )
 
 /* ===== DISPLAY ===== */
+/* ver com o prof */
 function mostrarConversao() {
     var convertMoney = document.getElementById("convertMoney")
     var convertTemperature = document.getElementById("convertTemperature")
@@ -62,6 +64,108 @@ function mostrarConversao() {
 }
 
 /* ===== CONVERSOR ===== */
+/* Conversor de Temperatura */
+function convertTemperature() {
+    /* Variáveis */
+    var temp = document.getElementById("temp").value
+    var temp2 = document.getElementById("temp2").value
+
+    /* Conversão */
+    var valor1 = parseFloat(document.getElementById("converterTemp").value)
+
+    /* Fahrenheit para Celsius */
+    if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "celsius") {
+        var valor2 = ((valor1 - 32) * 5) / 9
+        var sigla = "°C"
+    }
+    /* Fahrenheit para Kelvin */
+    else if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "kelvin") {
+        var valor2 = (valor1 - 32) * 5 / 9 + 273.15
+        var sigla = "°K"
+    }
+    /* Celcius para Fahrenheit */
+    else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "fahrenheit") {
+        var valor2 = (valor1 * 9) / 5 + 32
+        var sigla = "°F"
+    }
+    /* Celcius para Kelvin */
+    else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "kelvin") {
+        var valor2 = (valor1 + 273.15)
+        var sigla = "°K"
+    }
+    /* Kelvin para Fahrenheit */
+    else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "fahrenheit") {
+        var valor2 = (valor1 - 273.15) * 9 / 5 + 32
+        var sigla = "°F"
+    }
+    /* Kelvin para Celcius */
+    else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "celsius") {
+        var valor2 = (valor1 - 273.15)
+        var sigla = "°C"
+    }
+
+    /* Exibição */
+    document.getElementById("valorFinalTemp").innerHTML = valor2.toFixed(2) + " " + sigla
+    document.getElementById("tempa").innerHTML = temp
+    document.getElementById("tempa2").innerHTML = temp2
+    document.getElementById("converterTempa").innerHTML = valor1
+}
+
+/* Conversor de Tempo */
+function convertTime() {
+    /* Variáveis */
+    var tempo = document.getElementById("tempo").value
+    var tempo2 = document.getElementById("tempo2").value
+
+    /* Conversão */
+    var valor1 = parseFloat(document.getElementById("converterTempo").value)
+
+    /* Hora em Minuto */
+    if (tempo.toLowerCase() == "horas" && tempo2.toLowerCase() == "minutos") {
+        var valor2 = valor1 * 60
+        var sigla = "min"
+    }
+    /* Hora em Segundo */
+    else if (tempo.toLowerCase() == "horas" && tempo2.toLowerCase() == "segundos") {
+        var valor2 = valor1 * 3600
+        var sigla = "seg"
+    }
+    /* Minuto em Hora */
+    else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "horas") {
+        var valor2 = valor1 / 60
+        var sigla = "hrs"
+    }
+    /* Minuto em Segundo */
+    else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "segundos") {
+        var valor2 = valor1 * 60
+        var sigla = "seg"
+    }
+    /* Segundo em Hora */
+    else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "horas") {
+        var valor2 = valor1 / 3600
+        var sigla = "hrs"
+    }
+    /* Segundo em Minuto */
+    else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "minutos") {
+        var valor2 = valor1 / 60
+        var sigla = "min"
+    }
+
+    /* Exibição */
+    document.getElementById("valorFinalTempo").innerHTML = valor2.toFixed(2) + " " + sigla
+    document.getElementById("tempoa").innerHTML = tempo
+    document.getElementById("tempoa2").innerHTML = tempo2
+    document.getElementById("converterTempoa").innerHTML = valor1
+}
+
+
+
+
+
+
+
+
+
 //conversor de moedas
 function convertMoney() {
     //variaveis
@@ -119,30 +223,6 @@ function convertMoney() {
     }
 }
 
-//conversor de temperatura
-function convertTemperature() {
-    //variaveis
-    var temp = document.getElementById("temp").value;
-    var temp2 = document.getElementById("temp2").value;
-
-    //conversão
-    var valor1 = parseFloat(document.getElementById("converterTemp").value);
-
-    //temperaturas
-    if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "celsius") {
-        var valor2 = ((valor1 - 32) * 5) / 9;
-        var sigla = "°C";
-    } else if (
-        temp.toLowerCase() == "celsius" &&
-        temp2.toLowerCase() == "fahrenheit"
-    ) {
-        var valor2 = (valor1 * 9) / 5 + 32;
-        var sigla = " °F";
-    }
-    //conversão - exibir
-    document.getElementById("valorFinalTemp").innerHTML =
-        valor2.toFixed(2) + " " + sigla;
-}
 
 //conversor de comprimento
 function conversorComp() {

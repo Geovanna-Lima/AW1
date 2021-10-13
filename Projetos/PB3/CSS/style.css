@@ -157,13 +157,13 @@ aside {
     box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
 }
 
-#convertMoney {
+#convertTime {
     display: inline;
 }
 
+#convertMoney,
 #convertTemperature,
-#convertMeasures,
-#convertTime {
+#convertMeasures {
     display: none;
 }
 
@@ -244,6 +244,10 @@ h4.titleResult{
     margin-left: 1rem;
 }
 
+.card span {
+    font-weight: 500;
+}
+
 /* ===== MEDIA SCREEN ===== */
 @media screen and (max-width: 1400px) {
     #convertMoney,
@@ -285,6 +289,7 @@ h4.titleResult{
     .content {
         margin-right: auto;
         width: calc(100% + 15.625rem);
+        /* ver com prof */
         margin-top: auto;
         margin-bottom: auto;
     }
