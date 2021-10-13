@@ -10,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     min-height: 100vh;
+    min-width: 650px;
 }
 
 /* ===== HEADER ===== */
@@ -26,15 +27,15 @@ header {
 /* title h1 */
 header h1 {
     font-weight: 200;
-    margin-top: 15px;
-    margin-left: 13px;
+    margin-top: 0.94rem;
+    margin-left: 0.81rem;
     color: #353434;
 }
 
 /* logo */
 .logo {
-    margin-top: 15px;
-    width: 60px;
+    margin-top: 0.94rem;
+    width: 3.75rem;
 }
 
 /* navigation */
@@ -48,7 +49,7 @@ aside {
     position: relative;
     height: calc(100vh - 4.69rem);
     background: #9FEFF3;
-    width: 83px;
+    width: 5.19rem;
     box-shadow: 10px 0 0 #FFA9A6;
     border-left: 10px solid #9FEFF3;
     overflow-x: hidden;
@@ -60,16 +61,16 @@ aside {
     top: 0;
     left: 0;
     width: 100%;
-    padding-left: 5px;
-    padding-top: 20px;
+    padding-left: 0.31rem;
+    padding-top: 1.25rem;
 }
 
 .navigation ul li {
     position: relative;
     list-style: none;
     width: 100%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
 }
 
 .navigation ul li a {
@@ -83,10 +84,10 @@ aside {
 .navigation ul li a .icon,
 .fas.fa-bars {
     position: relative;
-    min-width: 60px;
-    height: 60px;
+    min-width: 3.75rem;
+    height: 3.75rem;
     text-align: center;
-    line-height: 10px;
+    line-height: 1;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -103,8 +104,8 @@ aside {
 .navigation ul li a .title {
     position: relative;
     display: block;
-    padding-left: 10px;
-    height: 60px;
+    padding-left: 0.625rem;
+    height: 3.75rem;
     line-height: 60px;
     white-space: nowrap;
 }
@@ -116,10 +117,10 @@ aside {
 .navigation ul li.active::before {
     content: '';
     position: absolute;
-    top: -30px;
+    top: -1.875rem;
     right: 0;
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     background: #9FEFF3;
     border-radius: 50%;
     box-shadow: 15px 15px 0 #FFA9A6;
@@ -128,10 +129,10 @@ aside {
 .navigation ul li.active::after {
     content: '';
     position: absolute;
-    bottom: -30px;
+    bottom: -1.875rem;
     right: 0;
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
     background: #9FEFF3;
     border-radius: 50%;
     box-shadow: 15px -15px 0 #FFA9A6;
@@ -158,8 +159,6 @@ aside {
 
 #convertMoney {
     display: inline;
-    align-items: center;
-    justify-content: center;  
 }
 
 #convertTemperature,
@@ -187,8 +186,8 @@ aside {
 }
 
 input {
-    width: 280px;
-    height: calc(1.5em + .75rem + 2px);
+    width: 17.5rem;
+    height: calc(1.5em + .75rem + 0.125rem);
     border-radius: 3px;
     border: 1px solid black;
     padding-left: 0.5rem;
@@ -197,11 +196,14 @@ input {
 /* button */
 #revert, 
 #convert {
-    width: 34px;
-    height: 34px;
+    width: 2.125rem;
+    height: 2.125rem;
     background-color: #34999E;
     border-radius: 3px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* icon */
@@ -213,7 +215,7 @@ input {
 
 .fas.fa-bars {
     border-left: 10px solid #9FEFF3;
-    width: 75px;
+    width: 4.69rem;
     top: 0.6rem;
 }
 
@@ -234,8 +236,8 @@ h4.titleResult{
     border: 1px solid #353434;
     border-radius: 3px;
     padding: 1.25rem;
-    margin-top: 15px;
-    width: 500px;
+    margin-top: 0.94rem;
+    width: 31.25rem;
 }
 
 .card.two {
@@ -243,6 +245,72 @@ h4.titleResult{
 }
 
 /* ===== MEDIA SCREEN ===== */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1400px) {
+    #convertMoney,
+    #convertTemperature,
+    #convertMeasures,
+    #convertTime {
+        width: 50rem;
+    }
+
+    .inputValue {
+        display: inline;
+    }
+
+    input {
+        width: 43.95rem;
+    }
+
+    .value,
+    .conversion,
+    .result {
+        margin-bottom: 1rem;
+    }
+
+    #revert, 
+    #convert  {
+        margin-left: auto;
+        margin-right: auto;
+        width: 6.125rem;
+    }
     
+
+}
+
+@media screen and (max-width: 1100px) {
+    .navigation {
+        display: none;
+    }
+
+    .content {
+        margin-right: auto;
+        width: calc(100% + 15.625rem);
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .cardDeck {
+        display: inline;
+    }
+
+    .card.two {
+        margin-left: 0;
+    }
+
+    #convertMoney, 
+    #convertTemperature, 
+    #convertMeasures, 
+    #convertTime {
+        width: 37.31rem;
+    }
+
+    input {
+        width: 31.35rem;
+    }
+
+    #convert {
+        margin-bottom: 0.7rem;
+    }
 }

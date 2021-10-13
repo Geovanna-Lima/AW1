@@ -6,9 +6,9 @@ const content = document.querySelector('.content')
 function activeMenu() {
     menu.forEach((item) =>
         item.classList.add('show'),
-        nav.style.width = "250px",
+        nav.style.width = "15.625rem",
         nav.style.transition = "0.4s",
-        content.style.width = 'calc(100% - 250px)',
+        content.style.width = 'calc(100% - 15.625rem)',
         content.style.transition = "0.4s",
     )
     this.classList.remove('show')
