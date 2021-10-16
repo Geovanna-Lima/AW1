@@ -1,18 +1,12 @@
 /* ===== MENU ===== */
-const menu = document.querySelectorAll('.fa-bars')
-const nav = document.querySelector('.navigation')
+const nav = document.querySelectorAll('.navigation')
 const content = document.querySelector('.content')
 
 function activeMenu() {
-    menu.forEach((item) =>
-        item.classList.add('show'),
-        nav.style.width = "15.625rem",
-        nav.style.transition = "0.4s",
-        content.style.width = 'calc(100% - 15.625rem)',
-        content.style.transition = "0.4s",
+    nav.forEach((item) =>
+        item.classList.toggle('show'),
     )
-    /* ver com prof */
-    this.classList.remove('show')
+    content.classList.toggle('show')
 }
 
 /* ===== NAVEGAÇÃO ===== */
@@ -30,38 +24,42 @@ list.forEach((item) =>
 )
 
 /* ===== DISPLAY ===== */
-/* ver com o prof */
-function mostrarConversao() {
-    var convertMoney = document.getElementById("convertMoney")
-    var convertTemperature = document.getElementById("convertTemperature")
-    var convertMeasures = document.getElementById("convertMeasures")
-    var convertTime = document.getElementById("convertTime")
+var divMoney = document.querySelector("#convertMoney")
+var divTemperature = document.querySelector("#convertTemperature")
+var divMeasures = document.querySelector("#convertMeasures")
+var divTime = document.querySelector("#convertTime")
 
-    if (convertMoney.style.display === "inline") {
-        convertMoney.style.display = "inline"
-        convertTemperature.style.display = "none"
-        convertMeasures.style.display = "none"
-        convertTime.style.display = "none"
-    }
-    if (convertTemperature.style.display === "inline") {
-        convertMoney.style.display = "none"
-        convertTemperature.style.display = "inline"
-        convertMeasures.style.display = "none"
-        convertTime.style.display = "none"
-    }
-    if (convertMeasures.style.display === "inline") {
-        convertMoney.style.display = "none"
-        convertTemperature.style.display = "none"
-        convertMeasures.style.display = "inline"
-        convertTime.style.display = "none"
-    }
-    if (convertTime.style.display === "inline") {
-        convertMoney.style.display = "none"
-        convertTemperature.style.display = "none"
-        convertMeasures.style.display = "none"
-        convertTime.style.display = "inline"
-    }
-}
+var listMoney = document.querySelector(".list.money")
+listMoney.addEventListener("click", function () {
+    divMoney.style.display = "block"
+    divTemperature.style.display = "none"
+    divMeasures.style.display = "none"
+    divTime.style.display = "none"
+});
+
+var listTemperature = document.querySelector(".list.temperature")
+listTemperature.addEventListener("click", function () {
+    divMoney.style.display = "none"
+    divTemperature.style.display = "block"
+    divMeasures.style.display = "none"
+    divTime.style.display = "none"
+});
+
+var listMeasures = document.querySelector(".list.measures")
+listMeasures.addEventListener("click", function () {
+    divMoney.style.display = "none"
+    divTemperature.style.display = "none"
+    divMeasures.style.display = "block"
+    divTime.style.display = "none"
+});
+
+var listTime = document.querySelector(".list.time")
+listTime.addEventListener("click", function () {
+    divMoney.style.display = "none"
+    divTemperature.style.display = "none"
+    divMeasures.style.display = "none"
+    divTime.style.display = "block"
+});
 
 /* ===== CONVERSOR ===== */
 /* Conversor de Temperatura */
@@ -158,93 +156,336 @@ function convertTime() {
     document.getElementById("converterTempoa").innerHTML = valor1
 }
 
-
-
-
-
-
-
-
-
-//conversor de moedas
+/* Conversor de Moedas */
 function convertMoney() {
-    //variaveis
-    var moeda = document.getElementById("moeda").value;
-    var moeda2 = document.getElementById("moeda2").value;
-    //moedas
-    if (moeda.toLowerCase() == "dolar" && moeda2.toLowerCase() == "real") {
-        var cotacao = 5.51;
-        var sigla = "BRL";
-    } else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "dolar") {
-        var cotacao = 0.18;
-        var sigla = "USD";
-    } else if (
-        moeda.toLowerCase() == "libra" &&
-        moeda2.toLowerCase() == "dolar"
-    ) {
-        var cotacao = 1.39;
-        var sigla = "USD";
-    } else if (
-        moeda.toLowerCase() == "dolar" &&
-        moeda2.toLowerCase() == "libra"
-    ) {
-        var cotacao = 0.72;
-        var sigla = "GBP";
+    /* Variáveis */
+    var moeda = document.getElementById("moeda").value
+    var moeda2 = document.getElementById("moeda2").value
 
-    }
-    else if (
-        moeda.toLowerCase() == "real" &&
-        moeda2.toLowerCase() == "libra"
-    ) {
-        var cotacao = 0.13;
-        var sigla = "GBP";
-    } else if (
-        moeda.toLowerCase() == "libra" &&
-        moeda2.toLowerCase() == "real"
-    ) {
-        var cotacao = 7.64;
-        var sigla = "BRL";
-    } else {
-        document.getElementById("valorFinal").innerHTML = "Moeda desconhecida";
-    }
-    //conversão
-    var valor1 = parseFloat(document.getElementById("converter").value);
-    if (valor1 > 0) {
-        valor2 = valor1 * cotacao;
+    /* Conversão */
+    var valor1 = parseFloat(document.getElementById("converterMoeda").value)
 
-        document.getElementById("valorFinal").innerHTML =
-            valor2.toFixed(2) + " " + sigla;
-    } else if (valor1 == 0) {
-        document.getElementById("valorFinal").innerHTML =
-            "insira um valor maior que 0";
-    } else {
-        document.getElementById("valorFinal").innerHTML =
-            "insira um valor positivo";
+    /* Dólar em Libra */
+    if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "libra") {
+        var valor2 = valor1 * 0.73
+        var sigla = "GBP"
     }
+    /* Dólar em Real */
+    else if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "real") {
+        var valor2 = valor1 * 5.46
+        var sigla = "BRL"
+    }
+    /* Dólar em Euro */
+    else if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "euro") {
+        var valor2 = valor1 * 0.86
+        var sigla = "EUR"
+    }
+    /* Libra em Dólar */
+    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "dólar") {
+        var valor2 = valor1 * 1.37
+        var sigla = "USD"
+    }
+    /* Libra em Real */
+    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "real") {
+        var valor2 = valor1 * 7.50
+        var sigla = "BRL"
+    }
+    /* Libra em Euro */
+    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "euro") {
+        var valor2 = valor1 * 1.19
+        var sigla = "EUR"
+    }
+    /* Real em Dólar */
+    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "dólar") {
+        var valor2 = valor1 * 0.18
+        var sigla = "USD"
+    }
+    /* Real em Libra */
+    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "libra") {
+        var valor2 = valor1 * 0.13
+        var sigla = "GBP"
+    }
+    /* Real em Euro */
+    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "euro") {
+        var valor2 = valor1 * 0.16
+        var sigla = "EUR"
+    }
+    /* Euro em Dólar */
+    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "dólar") {
+        var valor2 = valor1 * 1.16
+        var sigla = "USD"
+    }
+    /* Euro em Libra */
+    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "libra") {
+        var valor2 = valor1 * 0.84
+        var sigla = "GBP"
+    }
+    /* Euro em Real*/
+    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "real") {
+        var valor2 = valor1 * 6.33
+        var sigla = "USD"
+    }
+
+    /* Exibição */
+    document.getElementById("valorFinalMoeda").innerHTML = valor2.toFixed(2) + " " + sigla
+    document.getElementById("moedaa").innerHTML = moeda
+    document.getElementById("moedaa2").innerHTML = moeda2
+    document.getElementById("converterMoeda2").innerHTML = valor1.toFixed(2)
 }
 
+/* Conversor de Medida */
+function convertMeasures() {
+    /* Variáveis */
+    var medida = document.getElementById("medida").value
+    var medida2 = document.getElementById("medida2").value
 
-//conversor de comprimento
-function conversorComp() {
-    //variaveis
-    var comp = document.getElementById("comp").value;
-    var comp2 = document.getElementById("comp2").value;
+    /* Conversão */
+    var valor1 = parseFloat(document.getElementById("converterMedida").value)
 
-    //conversão
-    var valor1 = parseFloat(document.getElementById("converterComp").value);
-
-    //temperaturas
-    if (comp.toLowerCase() == "anos-luz" && comp2.toLowerCase() == "km") {
-        var valor2 = valor1 / 0.00000000000010570;
-        var sigla = "Km";
-    } else if (
-        comp.toLowerCase() == "km" &&
-        comp2.toLowerCase() == "anos-luz"
-    ) {
-        var valor2 = valor1 * 0.00000000000010570;
-        var sigla = "ly";
+    /* Quilômetro em Quilômetro  */
+    if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 1
+        var sigla = "km"
     }
-    //conversão - exibir
-    document.getElementById("valorFinalComp").innerHTML =
-        valor2.toFixed(2) + " " + sigla;
+    /* Quilômetro em Hectômetro */
+    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 10
+        var sigla = "hm"
+    }
+    /* Quilômetro em Decâmetro */
+    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 100
+        var sigla = "dam"
+    }
+    /* Quilômetro em Metro */
+    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 1000
+        var sigla = "m"
+    }
+    /* Quilômetro em Decímetro */
+    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 10000
+        var sigla = "dm"
+    }
+    /* Quilômetro em Centímetro */
+    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "centímetro") {
+        var valor2 = valor1 * 100000
+        var sigla = "cm"
+    }
+    /* Quilômetro em Milímetro */
+    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 1000000
+        var sigla = "mm"
+    }
+    /* Hectômetro em Quilômetro */
+    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 0.1
+        var sigla = "km"
+    }
+    /* Hectômetro em Hectômetro */
+    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 1
+        var sigla = "hm"
+    }
+    /* Hectômetro em Decâmetro */
+    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 10
+        var sigla = "dam"
+    }
+    /* Hectômetro em Metro */
+    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 100
+        var sigla = "m"
+    }
+    /* Hectômetro em Decímetro */
+    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 1000
+        var sigla = "dm"
+    }
+    /* Hectômetro em Milímetro */
+    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 100000
+        var sigla = "mm"
+    }
+    /* Decâmetro em Quilômetro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 0.01
+        var sigla = "km"
+    }
+    /* Decâmetro em Hectômetro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 0.1
+        var sigla = "hm"
+    }
+    /* Decâmetro em Decâmetro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 1
+        var sigla = "dam"
+    }
+    /* Decâmetro em Metro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 10
+        var sigla = "m"
+    }
+    /* Decâmetro em Decímetro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 100
+        var sigla = "dm"
+    }
+    /* Decâmetro em Centímetro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "centímetro") {
+        var valor2 = valor1 * 1000
+        var sigla = "cm"
+    }
+    /* Decâmetro em Milímetro */
+    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 10000
+        var sigla = "mm"
+    }
+    /* Metro em Quilômetro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 0.001
+        var sigla = "km"
+    }
+    /* Metro em Hectômetro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 0.01
+        var sigla = "hm"
+    }
+    /* Metro em Decâmetro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 0.1
+        var sigla = "dam"
+    }
+    /* Metro em Metro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 1
+        var sigla = "m"
+    }
+    /* Metro em Decímetro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 10
+        var sigla = "dm"
+    }
+    /* Metro em Centímetro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "centímetro") {
+        var valor2 = valor1 * 100
+        var sigla = "cm"
+    }
+    /* Metro em Milímetro */
+    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 1000
+        var sigla = "mm"
+    }
+    /* Decímetro em Quilômetro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 0.0001
+        var sigla = "km"
+    }
+    /* Decímetro em Hectômetro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 0.001
+        var sigla = "hm"
+    }
+    /* Decímetro em Decâmetro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 0.01
+        var sigla = "dam"
+    }
+    /* Decímetro em Metro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 0.1
+        var sigla = "m"
+    }
+    /* Decímetro em Decímetro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 1
+        var sigla = "dm"
+    }
+    /* Decímetro em Centímetro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "centímetro") {
+        var valor2 = valor1 * 10
+        var sigla = "cm"
+    }
+    /* Decímetro em Milímetro */
+    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 100
+        var sigla = "mm"
+    }
+    /* Centímetro em Quilômetro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 0.00001
+        var sigla = "km"
+    }
+    /* Centímetro em Hectômetro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 0.0001
+        var sigla = "hm"
+    }
+    /* Centímetro em Decâmetro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 0.001
+        var sigla = "dam"
+    }
+    /* Centímetro em Metro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 0.01
+        var sigla = "m"
+    }
+    /* Centímetro em Decímetro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 0.1
+        var sigla = "dm"
+    }
+    /* Centímetro em Centímetro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "centímetro") {
+        var valor2 = valor1 * 1
+        var sigla = "cm"
+    }
+    /* Centímetro em Milímetro */
+    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 10
+        var sigla = "mm"
+    }
+    /* Milímetro em Quilômetro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "quilômetro") {
+        var valor2 = valor1 * 0.000001
+        var sigla = "km"
+    }
+    /* Milímetro em Hectômetro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "hectômetro") {
+        var valor2 = valor1 * 0.00001
+        var sigla = "hm"
+    }
+    /* Milímetro em Decâmetro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "decâmetro") {
+        var valor2 = valor1 * 0.0001
+        var sigla = "dam"
+    }
+    /* Milímetro em Metro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "metro") {
+        var valor2 = valor1 * 0.001
+        var sigla = "m"
+    }
+    /* Milímetro em Decímetro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "decímetro") {
+        var valor2 = valor1 * 0.01
+        var sigla = "dm"
+    }
+    /* Milímetro em Centímetro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "centímetro") {
+        var valor2 = valor1 * 0.1
+        var sigla = "cm"
+    }
+    /* Milímetro em Milímetro */
+    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "milímetro") {
+        var valor2 = valor1 * 1
+        var sigla = "mm"
+    }
+
+    /* Exibição */
+    document.getElementById("valorFinalMedida").innerHTML = valor2.toFixed(2) + " " + sigla
+    document.getElementById("medidaa").innerHTML = medida
+    document.getElementById("medidaa2").innerHTML = medida2
+    document.getElementById("converterMedida2").innerHTML = valor1.toFixed(2)
 }

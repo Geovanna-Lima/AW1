@@ -54,6 +54,11 @@ aside {
     border-left: 10px solid #9FEFF3;
     overflow-x: hidden;
     justify-content: left;
+    transition: 0.4s;
+}
+
+.navigation.show {
+    width: 15.625rem; 
 }
 
 .navigation ul {
@@ -143,27 +148,31 @@ aside {
     display: grid;
     place-items: center;
     margin-left: auto;
-    
     width: calc(100% - 83px);
+    transition: 0.4s;
+}
+
+.content.show {
+    width: calc(100% - 15.625rem);
 }
 
 /* content conversion */
 #convertTemperature,
 #convertMeasures,
 #convertTime,
-#convertMoney  {
+#convertMoney {
     border-radius: 5px;
     padding: 3rem;
     box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
 }
 
-#convertTime {
+#convertMoney {
     display: inline;
 }
 
-#convertMoney,
+#convertTime,
 #convertTemperature,
-#convertMeasures {
+#convertMeasures{
     display: none;
 }
 
@@ -255,6 +264,8 @@ h4.titleResult{
     #convertMeasures,
     #convertTime {
         width: 50rem;
+        top: 4.69rem;
+        position: relative;
     }
 
     .inputValue {
@@ -286,13 +297,21 @@ h4.titleResult{
         display: none;
     }
 
+    .navigation.show {
+        display: inline-flex;
+        height: 100vh;
+        z-index: 1;
+    }
+
     .content {
         margin-right: auto;
-        width: calc(100% + 15.625rem);
-        /* ver com prof */
-        margin-top: auto;
-        margin-bottom: auto;
+        width: calc(100% + 15.625rem); 
     }
+
+    .content.show {
+        width: 100%;
+    }
+
 }
 
 @media screen and (max-width: 900px) {

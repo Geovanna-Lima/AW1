@@ -24,26 +24,26 @@
         <nav id="menu">
             <div class="navigation">
                 <ul>
-                    <li class="list active">
-                        <a href="#" onclick="mostrarConversao()">
+                    <li class="list money active">
+                        <a href="#">
                             <span class="icon"><i class="fas fa-coins"></i></span>
                             <span class="title">Moedas</span>
                         </a>
                     </li>
-                    <li class="list">
-                        <a href="#" onclick="mostrarConversao()">
+                    <li class="list temperature">
+                        <a href="#">
                             <span class="icon"><i class="fas fa-thermometer-three-quarters"></i></span>
                             <span class="title">Temperatura</span>
                         </a>
                     </li>
-                    <li class="list">
-                        <a href="#" onclick="mostrarConversao()">
+                    <li class="list measures">
+                        <a href="#">
                             <span class="icon"><i class="fas fa-ruler-combined"></i></span>
                             <span class="title">Medidas</span>
                         </a>
                     </li>
-                    <li class="list">
-                        <a href="#" onclick="mostrarConversao()">
+                    <li class="list time">
+                        <a href="#">
                             <span class="icon"><i class="fas fa-hourglass-half"></i></span>
                             <span class="title">Tempo</span>
                         </a>
@@ -66,13 +66,13 @@
 
                 <div class="value">
                     <p>Valor:</p>
-                    <input type="number" min="0" step=".01" placeholder="Insira o valor">
+                    <input id="converterMoeda" type="number" min="0" step=".01" placeholder="Insira o valor">
                 </div>
 
                 <div class="conversion">
                     <p>Converter de:</p>
-                    <input list="types" placeholder="Escolha uma moeda">
-                    <datalist id="types">
+                    <input id="moeda" list="typesMoedas" placeholder="Escolha uma moeda">
+                    <datalist id="typesMoedas">
                         <option value="Dólar">
                         <option value="Libra">
                         <option value="Real">
@@ -80,11 +80,11 @@
                     </datalist>
                 </div>
 
-                <button id="revert" type="submit" onclick=convertMoney()><i class="fas fa-exchange-alt"></i></button>
+                <button id="revert" type="submit"><i class="fas fa-exchange-alt"></i></button>
 
                 <div class="result">
                     <p>Para:</p>
-                    <input list="types" placeholder="Escolha uma moeda">
+                    <input id="moeda2" list="typesMoedas" placeholder="Escolha uma moeda">
                 </div>
 
                 <button id="convert" type="submit" onclick=convertMoney()><i class="fas fa-undo-alt"></i></button>
@@ -96,13 +96,13 @@
 
                 <div class="cardDeck">
                     <div class="card">
-                        <p>Conversão de:</p>
-                        <p>Valor a converter:</p>
+                        <p>Conversão de: <span id="moedaa"></span> </p>
+                        <p>Valor a converter: <span id="converterMoeda2"></span> </p>
                     </div>
 
                     <div class="card two">
-                        <p>Para:</p>
-                        <p>Resultado da conversão:</p>
+                        <p>Para: <span id="moedaa2"></span></p>
+                        <p>Resultado da conversão: <span id="valorFinalMoeda"></span></p>
                     </div>
 
                 </div>
@@ -178,13 +178,13 @@
 
                 <div class="value">
                     <p>Valor:</p>
-                    <input type="number" min="0" step=".01" placeholder="Insira o valor">
+                    <input id="converterMedida" type="number" min="0" step=".01" placeholder="Insira o valor">
                 </div>
 
                 <div class="conversion">
                     <p>Converter de:</p>
-                    <input list="types" placeholder="Escolha uma medida">
-                    <datalist id="types">
+                    <input id="medida" list="typesMedida" placeholder="Escolha uma medida">
+                    <datalist id="typesMedida">
                         <option value="Quilômetro">
                         <option value="Hectômetro">
                         <option value="Decâmetro">
@@ -195,11 +195,11 @@
                     </datalist>
                 </div>
 
-                <button id="revert" type="submit" onclick=convertMeasures()><i class="fas fa-exchange-alt"></i></button>
+                <button id="revert" type="submit"><i class="fas fa-exchange-alt"></i></button>
 
                 <div class="result">
                     <p>Para:</p>
-                    <input list="types" placeholder="Escolha uma medida">
+                    <input id="medida2" list="typesMedida" placeholder="Escolha uma medida">
                 </div>
 
                 <button id="convert" type="submit" onclick=convertMeasures()><i class="fas fa-undo-alt"></i></button>
@@ -211,13 +211,13 @@
 
                 <div class="cardDeck">
                     <div class="card">
-                        <p>Conversão de:</p>
-                        <p>Valor a converter:</p>
+                        <p>Conversão de: <span id="medidaa"></span> </p>
+                        <p>Valor a converter: <span id="converterMedida2"></span> </p>
                     </div>
 
                     <div class="card two">
-                        <p>Para:</p>
-                        <p>Resultado da conversão:</p>
+                        <p>Para: <span id="medidaa2"></span></p>
+                        <p>Resultado da conversão: <span id="valorFinalMedida"></span></p>
                     </div>
 
                 </div>
@@ -242,7 +242,7 @@
 
                 <div class="conversion">
                     <p>Converter de:</p>
-                    <input id="tempo" list="typesMea" placeholder="Escolha uma temperatura">
+                    <input id="tempo" list="typesMea" placeholder="Escolha uma unidade">
                     <datalist id="typesMea">
                         <option value="Horas">
                         <option value="Minutos">
@@ -254,7 +254,7 @@
 
                 <div class="result">
                     <p>Para:</p>
-                    <input id="tempo2" list="typesMea" placeholder="Escolha uma temperatura">
+                    <input id="tempo2" list="typesMea" placeholder="Escolha uma unidade">
                 </div>
 
                 <button id="convert" type="submit" onclick=convertTime()><i class="fas fa-undo-alt"></i></button>
