@@ -489,3 +489,46 @@ function convertMeasures() {
     document.getElementById("medidaa2").innerHTML = medida2
     document.getElementById("converterMedida2").innerHTML = valor1.toFixed(2)
 }
+
+/* ===== REVERTER ===== */
+/* revertendo tempo */
+function revertTemperature() {
+    var temp = document.getElementById("temp").value
+    var temp2 = document.getElementById("temp2").value
+
+    /* Reverter */
+    document.getElementById("temp").value = temp2
+    document.getElementById("temp2").value = temp
+}
+
+/* revertendo temperatura */
+function revertTime() {
+    var tempo = document.getElementById("tempo").value
+    var tempo2 = document.getElementById("tempo2").value
+
+    /* Reverter */
+    document.getElementById("tempo").value = tempo2
+    document.getElementById("tempo2").value = tempo
+}
+
+/* revertendo moeda */
+function revertMoney() {
+    var moeda = document.getElementById("moeda").value
+    var moeda2 = document.getElementById("moeda2").value
+
+    /* Reverter */
+    document.getElementById("moeda").value = moeda2
+    document.getElementById("moeda2").value = moeda
+}
+
+/* revertendo medida */
+function revertMeasures() {
+    var medida = document.getElementById("medida").value
+    var medida2 = document.getElementById("medida2").value
+
+    /* Reverter */
+    document.getElementById("medida").value = medida2
+    document.getElementById("medida2").value = medida
+}
+
+
