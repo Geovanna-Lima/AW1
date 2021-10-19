@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #7ddce9;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(43, 40, 40);
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    background: white;
+    border-radius: 5px;
+    padding-top: 0.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container.localizacao {
+    margin-top: 0.5rem;
+}
+
+fieldset {
+    padding: 0rem 1rem 1rem 1rem;
+    background-color: #ffffff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 0;
+}
+
+legend {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 0.3rem;
+}
+
+input {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid #3b3b3b;
+    padding-left: 0.5rem;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} 
+
+input#idNome,
+input#idSobrenome,
+input#idData,
+input#idEmail, 
+input#idTel,
+input#idCpf {
+    width: 41rem;
+}
+
+input#idRua,
+input#idBairro,
+input#idNumero,
+input#idCep {
+    width: 20rem;
+}
+
+.dados {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.segundo {
+    padding-left: 1rem;
+}
+
+#idRua,
+#idBairro,
+#idNumero,
+#idCep {
+    display: block;
+}
+
+.botoes {
+    display: flex;
+}
+
+#enviar {
+    margin-right: 1rem;
+}
+
+#enviar,
+.apagar {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 5rem;
+    padding-left: 0;
+    background-color: #ff6791;
+    color: white;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+#enviar:hover,
+.apagar:hover {
+    background-color: #ffc1d2;
+}
+
+.errorInput {
+    border: 2px solid rgb(207, 53, 53) !important;
+}
