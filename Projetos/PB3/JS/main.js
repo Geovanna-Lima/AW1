@@ -65,520 +65,518 @@ listTime.addEventListener("click", function () {
 /* Conversor de Temperatura */
 function convertTemperature() {
     /* Variáveis */
-    var temp = document.getElementById("temp").value
-    var temp2 = document.getElementById("temp2").value
+    var temperature = document.getElementById("temperature").value
+    var temperatureTwo = document.getElementById("temperatureTwo").value
 
     /* Conversão */
-    var valor1 = parseFloat(document.getElementById("converterTemp").value)
+    var valueOne = parseFloat(document.getElementById("temperatureConvert").value)
 
     /* Fahrenheit para Celsius */
-    if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "celsius") {
-        var valor2 = ((valor1 - 32) * 5) / 9
-        var sigla = "°C"
+    if (temperature.toLowerCase() == "fahrenheit" && temperatureTwo.toLowerCase() == "celsius") {
+        var valueTwo = ((valueOne - 32) * 5) / 9
+        var initials = "°C"
     }
     /* Fahrenheit para Kelvin */
-    else if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "kelvin") {
-        var valor2 = (valor1 - 32) * 5 / 9 + 273.15
-        var sigla = "°K"
+    else if (temperature.toLowerCase() == "fahrenheit" && temperatureTwo.toLowerCase() == "kelvin") {
+        var valueTwo = (valueOne - 32) * 5 / 9 + 273.15
+        var initials = "°K"
     }
     /* Fahrenheit para Fahrenheit */
-    else if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "fahrenheit") {
-        var valor2 = valor1
-        var sigla = "°F"
+    else if (temperature.toLowerCase() == "fahrenheit" && temperatureTwo.toLowerCase() == "fahrenheit") {
+        var valueTwo = valueOne
+        var initials = "°F"
     }
     /* Celcius para Fahrenheit */
-    else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "fahrenheit") {
-        var valor2 = (valor1 * 9) / 5 + 32
-        var sigla = "°F"
+    else if (temperature.toLowerCase() == "celsius" && temperatureTwo.toLowerCase() == "fahrenheit") {
+        var valueTwo = (valueOne * 9) / 5 + 32
+        var initials = "°F"
     }
     /* Celcius para Kelvin */
-    else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "kelvin") {
-        var valor2 = (valor1 + 273.15)
-        var sigla = "°K"
+    else if (temperature.toLowerCase() == "celsius" && temperatureTwo.toLowerCase() == "kelvin") {
+        var valueTwo = (valueOne + 273.15)
+        var initials = "°K"
     }
     /* Celcius para Celcius */
-    else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "celsius") {
-        var valor2 = valor1
-        var sigla = "°C"
+    else if (temperature.toLowerCase() == "celsius" && temperatureTwo.toLowerCase() == "celsius") {
+        var valueTwo = valueOne
+        var initials = "°C"
     }
     /* Kelvin para Fahrenheit */
-    else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "fahrenheit") {
-        var valor2 = (valor1 - 273.15) * 9 / 5 + 32
-        var sigla = "°F"
+    else if (temperature.toLowerCase() == "kelvin" && temperatureTwo.toLowerCase() == "fahrenheit") {
+        var valueTwo = (valueOne - 273.15) * 9 / 5 + 32
+        var initials = "°F"
     }
     /* Kelvin para Celcius */
-    else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "celsius") {
-        var valor2 = (valor1 - 273.15)
-        var sigla = "°C"
+    else if (temperature.toLowerCase() == "kelvin" && temperatureTwo.toLowerCase() == "celsius") {
+        var valueTwo = (valueOne - 273.15)
+        var initials = "°C"
     }
     /* Kelvin para Kelvin  */
-    else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "kelvin") {
-        var valor2 = valor1
-        var sigla = "°K"
+    else if (temperature.toLowerCase() == "kelvin" && temperatureTwo.toLowerCase() == "kelvin") {
+        var valueTwo = valueOne
+        var initials = "°K"
     }
 
     /* Exibição */
-    document.getElementById("valorFinalTemp").innerHTML = valor2.toFixed(2) + " " + sigla
-    document.getElementById("tempa").innerHTML = temp
-    document.getElementById("tempa2").innerHTML = temp2
-    document.getElementById("converterTempa").innerHTML = valor1
+    document.getElementById("finalTemperatureValue").innerHTML = valueTwo.toFixed(2) + " " + initials
+    document.getElementById("temperatureConversion").innerHTML = temperature
+    document.getElementById("temperatureConversionTwo").innerHTML = temperatureTwo
+    document.getElementById("temperatureConvertTwo").innerHTML = valueOne
 }
 
 /* Conversor de Tempo */
 function convertTime() {
     /* Variáveis */
-    var tempo = document.getElementById("tempo").value
-    var tempo2 = document.getElementById("tempo2").value
+    var time = document.getElementById("time").value
+    var timeTwo = document.getElementById("timeTwo").value
 
     /* Conversão */
-    var valor1 = parseFloat(document.getElementById("converterTempo").value)
+    var valueOne = parseFloat(document.getElementById("timeConvert").value)
 
     /* Hora em Minuto */
-    if (tempo.toLowerCase() == "horas" && tempo2.toLowerCase() == "minutos") {
-        var valor2 = valor1 * 60
-        var sigla = "min"
+    if (time.toLowerCase() == "horas" && timeTwo.toLowerCase() == "minutos") {
+        var valueTwo = valueOne * 60
+        var initials = "min"
     }
     /* Hora em Segundo */
-    else if (tempo.toLowerCase() == "horas" && tempo2.toLowerCase() == "segundos") {
-        var valor2 = valor1 * 3600
-        var sigla = "seg"
+    else if (time.toLowerCase() == "horas" && timeTwo.toLowerCase() == "segundos") {
+        var valueTwo = valueOne * 3600
+        var initials = "seg"
     }
     /* Hora em Hora */
-    else if (tempo.toLowerCase() == "horas" && tempo2.toLowerCase() == "horas") {
-        var valor2 = valor1
-        var sigla = "hrs"
+    else if (time.toLowerCase() == "horas" && timeTwo.toLowerCase() == "horas") {
+        var valueTwo = valueOne
+        var initials = "hrs"
     }
     /* Minuto em Hora */
-    else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "horas") {
-        var valor2 = valor1 / 60
-        var sigla = "hrs"
+    else if (time.toLowerCase() == "minutos" && timeTwo.toLowerCase() == "horas") {
+        var valueTwo = valueOne / 60
+        var initials = "hrs"
     }
     /* Minuto em Segundo */
-    else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "segundos") {
-        var valor2 = valor1 * 60
-        var sigla = "seg"
+    else if (time.toLowerCase() == "minutos" && timeTwo.toLowerCase() == "segundos") {
+        var valueTwo = valueOne * 60
+        var initials = "seg"
     }
     /* Minuto em Minuto */
-    else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "minutos") {
-        var valor2 = valor1
-        var sigla = "min"
+    else if (time.toLowerCase() == "minutos" && timeTwo.toLowerCase() == "minutos") {
+        var valueTwo = valueOne
+        var initials = "min"
     }
     /* Segundo em Hora */
-    else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "horas") {
-        var valor2 = valor1 / 3600
-        var sigla = "hrs"
+    else if (time.toLowerCase() == "segundos" && timeTwo.toLowerCase() == "horas") {
+        var valueTwo = valueOne / 3600
+        var initials = "hrs"
     }
     /* Segundo em Minuto */
-    else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "minutos") {
-        var valor2 = valor1 / 60
-        var sigla = "min"
+    else if (time.toLowerCase() == "segundos" && timeTwo.toLowerCase() == "minutos") {
+        var valueTwo = valueOne / 60
+        var initials = "min"
     }
     /* Segundo em Segundo */
-    else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "segundos") {
-        var valor2 = valor1
-        var sigla = "seg"
+    else if (time.toLowerCase() == "segundos" && timeTwo.toLowerCase() == "segundos") {
+        var valueTwo = valueOne
+        var initials = "seg"
     }
 
     /* Exibição */
-    document.getElementById("valorFinalTempo").innerHTML = valor2.toFixed(2) + " " + sigla
-    document.getElementById("tempoa").innerHTML = tempo
-    document.getElementById("tempoa2").innerHTML = tempo2
-    document.getElementById("converterTempoa").innerHTML = valor1
+    document.getElementById("finalTimeValue").innerHTML = valueTwo.toFixed(2) + " " + initials
+    document.getElementById("timeConversion").innerHTML = time
+    document.getElementById("timeConversionTwo").innerHTML = timeTwo
+    document.getElementById("timeConvertTwo").innerHTML = valueOne
 }
 
 /* Conversor de Moedas */
 function convertMoney() {
     /* Variáveis */
-    var moeda = document.getElementById("moeda").value
-    var moeda2 = document.getElementById("moeda2").value
+    var money = document.getElementById("money").value
+    var moneyTwo = document.getElementById("moneyTwo").value
 
     /* Conversão */
-    var valor1 = parseFloat(document.getElementById("converterMoeda").value)
+    var valueOne = parseFloat(document.getElementById("moneyConvert").value)
 
     /* Dólar em Libra */
-    if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "libra") {
-        var valor2 = valor1 * 0.73
-        var sigla = "GBP"
+    if (money.toLowerCase() == "dólar" && moneyTwo.toLowerCase() == "libra") {
+        var valueTwo = valueOne * 0.73
+        var initials = "GBP"
     }
     /* Dólar em Real */
-    else if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "real") {
-        var valor2 = valor1 * 5.46
-        var sigla = "BRL"
+    else if (money.toLowerCase() == "dólar" && moneyTwo.toLowerCase() == "real") {
+        var valueTwo = valueOne * 5.46
+        var initials = "BRL"
     }
     /* Dólar em Euro */
-    else if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "euro") {
-        var valor2 = valor1 * 0.86
-        var sigla = "EUR"
+    else if (money.toLowerCase() == "dólar" && moneyTwo.toLowerCase() == "euro") {
+        var valueTwo = valueOne * 0.86
+        var initials = "EUR"
     }
     /* Dólar em Dólar */
-    else if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "dólar") {
-        var valor2 = valor1
-        var sigla = "USD"
+    else if (money.toLowerCase() == "dólar" && moneyTwo.toLowerCase() == "dólar") {
+        var valueTwo = valueOne
+        var initials = "USD"
     }
     /* Libra em Dólar */
-    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "dólar") {
-        var valor2 = valor1 * 1.37
-        var sigla = "USD"
+    else if (money.toLowerCase() == "libra" && moneyTwo.toLowerCase() == "dólar") {
+        var valueTwo = valueOne * 1.37
+        var initials = "USD"
     }
     /* Libra em Real */
-    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "real") {
-        var valor2 = valor1 * 7.50
-        var sigla = "BRL"
+    else if (money.toLowerCase() == "libra" && moneyTwo.toLowerCase() == "real") {
+        var valueTwo = valueOne * 7.50
+        var initials = "BRL"
     }
     /* Libra em Euro */
-    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "euro") {
-        var valor2 = valor1 * 1.19
-        var sigla = "EUR"
+    else if (money.toLowerCase() == "libra" && moneyTwo.toLowerCase() == "euro") {
+        var valueTwo = valueOne * 1.19
+        var initials = "EUR"
     }
     /* Libra em Libra */
-    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "libra") {
-        var valor2 = valor1
-        var sigla = "GBP"
+    else if (money.toLowerCase() == "libra" && moneyTwo.toLowerCase() == "libra") {
+        var valueTwo = valueOne
+        var initials = "GBP"
     }
     /* Real em Dólar */
-    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "dólar") {
-        var valor2 = valor1 * 0.18
-        var sigla = "USD"
+    else if (money.toLowerCase() == "real" && moneyTwo.toLowerCase() == "dólar") {
+        var valueTwo = valueOne * 0.18
+        var initials = "USD"
     }
     /* Real em Libra */
-    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "libra") {
-        var valor2 = valor1 * 0.13
-        var sigla = "GBP"
+    else if (money.toLowerCase() == "real" && moneyTwo.toLowerCase() == "libra") {
+        var valueTwo = valueOne * 0.13
+        var initials = "GBP"
     }
     /* Real em Euro */
-    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "euro") {
-        var valor2 = valor1 * 0.16
-        var sigla = "EUR"
+    else if (money.toLowerCase() == "real" && moneyTwo.toLowerCase() == "euro") {
+        var valueTwo = valueOne * 0.16
+        var initials = "EUR"
     }
     /* Real em Real */
-    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "real") {
-        var valor2 = valor1
-        var sigla = "BRL"
+    else if (money.toLowerCase() == "real" && moneyTwo.toLowerCase() == "real") {
+        var valueTwo = valueOne
+        var initials = "BRL"
     }
     /* Euro em Dólar */
-    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "dólar") {
-        var valor2 = valor1 * 1.16
-        var sigla = "USD"
+    else if (money.toLowerCase() == "euro" && moneyTwo.toLowerCase() == "dólar") {
+        var valueTwo = valueOne * 1.16
+        var initials = "USD"
     }
     /* Euro em Libra */
-    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "libra") {
-        var valor2 = valor1 * 0.84
-        var sigla = "GBP"
+    else if (money.toLowerCase() == "euro" && moneyTwo.toLowerCase() == "libra") {
+        var valueTwo = valueOne * 0.84
+        var initials = "GBP"
     }
     /* Euro em Real*/
-    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "real") {
-        var valor2 = valor1 * 6.33
-        var sigla = "BRL"
+    else if (money.toLowerCase() == "euro" && moneyTwo.toLowerCase() == "real") {
+        var valueTwo = valueOne * 6.33
+        var initials = "BRL"
     }
     /* Euro em Euro*/
-    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "euro") {
-        var valor2 = valor1
-        var sigla = "EUR"
+    else if (money.toLowerCase() == "euro" && moneyTwo.toLowerCase() == "euro") {
+        var valueTwo = valueOne
+        var initials = "EUR"
     }
 
     /* Exibição */
-    document.getElementById("valorFinalMoeda").innerHTML = valor2.toFixed(2) + " " + sigla
-    document.getElementById("moedaa").innerHTML = moeda
-    document.getElementById("moedaa2").innerHTML = moeda2
-    document.getElementById("converterMoeda2").innerHTML = valor1.toFixed(2)
+    document.getElementById("finalCurrencyValue").innerHTML = valueTwo.toFixed(2) + " " + initials
+    document.getElementById("currencyConversion").innerHTML = money
+    document.getElementById("currencyConversionTwo").innerHTML = moneyTwo
+    document.getElementById("moneyConvertTwo").innerHTML = valueOne.toFixed(2)
 }
 
 /* Conversor de Medida */
 function convertMeasures() {
     /* Variáveis */
-    var medida = document.getElementById("medida").value
-    var medida2 = document.getElementById("medida2").value
+    var measure = document.getElementById("measure").value
+    var measureTwo = document.getElementById("measureTwo").value
 
     /* Conversão */
-    var valor1 = parseFloat(document.getElementById("converterMedida").value)
+    var valueOne = parseFloat(document.getElementById("measuresConvert").value)
 
     /* Quilômetro em Quilômetro  */
-    if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 1
-        var sigla = "km"
+    if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 1
+        var initials = "km"
     }
     /* Quilômetro em Hectômetro */
-    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 10
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 10
+        var initials = "hm"
     }
     /* Quilômetro em Decâmetro */
-    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 100
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 100
+        var initials = "dam"
     }
     /* Quilômetro em Metro */
-    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 1000
-        var sigla = "m"
+    else if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 1000
+        var initials = "m"
     }
     /* Quilômetro em Decímetro */
-    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 10000
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 10000
+        var initials = "dm"
     }
     /* Quilômetro em Centímetro */
-    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "centímetro") {
-        var valor2 = valor1 * 100000
-        var sigla = "cm"
+    else if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "centímetro") {
+        var valueTwo = valueOne * 100000
+        var initials = "cm"
     }
     /* Quilômetro em Milímetro */
-    else if (medida.toLowerCase() == "quilômetro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 1000000
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "quilômetro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 1000000
+        var initials = "mm"
     }
     /* Hectômetro em Quilômetro */
-    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 0.1
-        var sigla = "km"
+    else if (measure.toLowerCase() == "hectômetro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 0.1
+        var initials = "km"
     }
     /* Hectômetro em Hectômetro */
-    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 1
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "hectômetro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 1
+        var initials = "hm"
     }
     /* Hectômetro em Decâmetro */
-    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 10
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "hectômetro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 10
+        var initials = "dam"
     }
     /* Hectômetro em Metro */
-    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 100
-        var sigla = "m"
+    else if (measure.toLowerCase() == "hectômetro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 100
+        var initials = "m"
     }
     /* Hectômetro em Decímetro */
-    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 1000
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "hectômetro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 1000
+        var initials = "dm"
     }
     /* Hectômetro em Milímetro */
-    else if (medida.toLowerCase() == "hectômetro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 100000
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "hectômetro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 100000
+        var initials = "mm"
     }
     /* Decâmetro em Quilômetro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 0.01
-        var sigla = "km"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 0.01
+        var initials = "km"
     }
     /* Decâmetro em Hectômetro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 0.1
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 0.1
+        var initials = "hm"
     }
     /* Decâmetro em Decâmetro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 1
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 1
+        var initials = "dam"
     }
     /* Decâmetro em Metro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 10
-        var sigla = "m"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 10
+        var initials = "m"
     }
     /* Decâmetro em Decímetro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 100
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 100
+        var initials = "dm"
     }
     /* Decâmetro em Centímetro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "centímetro") {
-        var valor2 = valor1 * 1000
-        var sigla = "cm"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "centímetro") {
+        var valueTwo = valueOne * 1000
+        var initials = "cm"
     }
     /* Decâmetro em Milímetro */
-    else if (medida.toLowerCase() == "decâmetro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 10000
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "decâmetro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 10000
+        var initials = "mm"
     }
     /* Metro em Quilômetro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 0.001
-        var sigla = "km"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 0.001
+        var initials = "km"
     }
     /* Metro em Hectômetro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 0.01
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 0.01
+        var initials = "hm"
     }
     /* Metro em Decâmetro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 0.1
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 0.1
+        var initials = "dam"
     }
     /* Metro em Metro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 1
-        var sigla = "m"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 1
+        var initials = "m"
     }
     /* Metro em Decímetro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 10
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 10
+        var initials = "dm"
     }
     /* Metro em Centímetro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "centímetro") {
-        var valor2 = valor1 * 100
-        var sigla = "cm"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "centímetro") {
+        var valueTwo = valueOne * 100
+        var initials = "cm"
     }
     /* Metro em Milímetro */
-    else if (medida.toLowerCase() == "metro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 1000
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "metro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 1000
+        var initials = "mm"
     }
     /* Decímetro em Quilômetro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 0.0001
-        var sigla = "km"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 0.0001
+        var initials = "km"
     }
     /* Decímetro em Hectômetro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 0.001
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 0.001
+        var initials = "hm"
     }
     /* Decímetro em Decâmetro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 0.01
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 0.01
+        var initials = "dam"
     }
     /* Decímetro em Metro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 0.1
-        var sigla = "m"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 0.1
+        var initials = "m"
     }
     /* Decímetro em Decímetro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 1
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 1
+        var initials = "dm"
     }
     /* Decímetro em Centímetro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "centímetro") {
-        var valor2 = valor1 * 10
-        var sigla = "cm"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "centímetro") {
+        var valueTwo = valueOne * 10
+        var initials = "cm"
     }
     /* Decímetro em Milímetro */
-    else if (medida.toLowerCase() == "decímetro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 100
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "decímetro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 100
+        var initials = "mm"
     }
     /* Centímetro em Quilômetro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 0.00001
-        var sigla = "km"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 0.00001
+        var initials = "km"
     }
     /* Centímetro em Hectômetro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 0.0001
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 0.0001
+        var initials = "hm"
     }
     /* Centímetro em Decâmetro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 0.001
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 0.001
+        var initials = "dam"
     }
     /* Centímetro em Metro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 0.01
-        var sigla = "m"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 0.01
+        var initials = "m"
     }
     /* Centímetro em Decímetro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 0.1
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 0.1
+        var initials = "dm"
     }
     /* Centímetro em Centímetro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "centímetro") {
-        var valor2 = valor1 * 1
-        var sigla = "cm"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "centímetro") {
+        var valueTwo = valueOne * 1
+        var initials = "cm"
     }
     /* Centímetro em Milímetro */
-    else if (medida.toLowerCase() == "centímetro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 10
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "centímetro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 10
+        var initials = "mm"
     }
     /* Milímetro em Quilômetro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "quilômetro") {
-        var valor2 = valor1 * 0.000001
-        var sigla = "km"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "quilômetro") {
+        var valueTwo = valueOne * 0.000001
+        var initials = "km"
     }
     /* Milímetro em Hectômetro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "hectômetro") {
-        var valor2 = valor1 * 0.00001
-        var sigla = "hm"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "hectômetro") {
+        var valueTwo = valueOne * 0.00001
+        var initials = "hm"
     }
     /* Milímetro em Decâmetro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "decâmetro") {
-        var valor2 = valor1 * 0.0001
-        var sigla = "dam"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "decâmetro") {
+        var valueTwo = valueOne * 0.0001
+        var initials = "dam"
     }
     /* Milímetro em Metro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "metro") {
-        var valor2 = valor1 * 0.001
-        var sigla = "m"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "metro") {
+        var valueTwo = valueOne * 0.001
+        var initials = "m"
     }
     /* Milímetro em Decímetro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "decímetro") {
-        var valor2 = valor1 * 0.01
-        var sigla = "dm"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "decímetro") {
+        var valueTwo = valueOne * 0.01
+        var initials = "dm"
     }
     /* Milímetro em Centímetro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "centímetro") {
-        var valor2 = valor1 * 0.1
-        var sigla = "cm"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "centímetro") {
+        var valueTwo = valueOne * 0.1
+        var initials = "cm"
     }
     /* Milímetro em Milímetro */
-    else if (medida.toLowerCase() == "milímetro" && medida2.toLowerCase() == "milímetro") {
-        var valor2 = valor1 * 1
-        var sigla = "mm"
+    else if (measure.toLowerCase() == "milímetro" && measureTwo.toLowerCase() == "milímetro") {
+        var valueTwo = valueOne * 1
+        var initials = "mm"
     }
 
     /* Exibição */
-    document.getElementById("valorFinalMedida").innerHTML = valor2.toFixed(2) + " " + sigla
-    document.getElementById("medidaa").innerHTML = medida
-    document.getElementById("medidaa2").innerHTML = medida2
-    document.getElementById("converterMedida2").innerHTML = valor1.toFixed(2)
+    document.getElementById("finalMeasureValue").innerHTML = valueTwo.toFixed(2) + " " + initials
+    document.getElementById("measureConversion").innerHTML = measure
+    document.getElementById("measureConversionTwo").innerHTML = measureTwo
+    document.getElementById("measuresConvertTwo").innerHTML = valueOne.toFixed(2)
 }
 
 /* ===== REVERTER ===== */
-/* revertendo tempo */
+/* revertendo temperatura */
 function revertTemperature() {
-    var temp = document.getElementById("temp").value
-    var temp2 = document.getElementById("temp2").value
+    var temperature = document.getElementById("temperature").value
+    var temperatureTwo = document.getElementById("temperatureTwo").value
 
     /* Reverter */
-    document.getElementById("temp").value = temp2
-    document.getElementById("temp2").value = temp
+    document.getElementById("temperature").value = temperatureTwo
+    document.getElementById("temperatureTwo").value = temperature
 }
 
-/* revertendo temperatura */
+/* revertendo tempo */
 function revertTime() {
-    var tempo = document.getElementById("tempo").value
-    var tempo2 = document.getElementById("tempo2").value
+    var time = document.getElementById("time").value
+    var timeTwo = document.getElementById("timeTwo").value
 
     /* Reverter */
-    document.getElementById("tempo").value = tempo2
-    document.getElementById("tempo2").value = tempo
+    document.getElementById("time").value = timeTwo
+    document.getElementById("timeTwo").value = time
 }
 
 /* revertendo moeda */
 function revertMoney() {
-    var moeda = document.getElementById("moeda").value
-    var moeda2 = document.getElementById("moeda2").value
+    var money = document.getElementById("money").value
+    var moneyTwo = document.getElementById("moneyTwo").value
 
     /* Reverter */
-    document.getElementById("moeda").value = moeda2
-    document.getElementById("moeda2").value = moeda
+    document.getElementById("money").value = moneyTwo
+    document.getElementById("moneyTwo").value = money
 }
 
 /* revertendo medida */
 function revertMeasures() {
-    var medida = document.getElementById("medida").value
-    var medida2 = document.getElementById("medida2").value
+    var measure = document.getElementById("measure").value
+    var measureTwo = document.getElementById("measureTwo").value
 
     /* Reverter */
-    document.getElementById("medida").value = medida2
-    document.getElementById("medida2").value = medida
+    document.getElementById("measure").value = measureTwo
+    document.getElementById("measureTwo").value = measure
 }
-
-
