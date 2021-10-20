@@ -32,10 +32,8 @@ header h1 {
     color: #353434;
 }
 
-/* logo */
-.logo {
-    margin-top: 0.94rem;
-    width: 3.75rem;
+span {
+    font-weight: 400;
 }
 
 /* navigation */
