@@ -54,7 +54,7 @@ aside {
     border-left: 10px solid #9FEFF3;
     overflow-x: hidden;
     justify-content: left;
-    transition: 0.4s;
+    transition: ease 0.4s;
 }
 
 .navigation.show {
@@ -149,7 +149,7 @@ aside {
     place-items: center;
     margin-left: auto;
     width: calc(100% - 83px);
-    transition: 0.4s;
+    transition: ease 0.4s;
 }
 
 .content.show {
@@ -310,6 +310,7 @@ h4.titleResult{
 
     .content.show {
         width: 100%;
+        opacity: 40%;
     }
 
 }

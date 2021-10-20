@@ -81,6 +81,11 @@ function convertTemperature() {
         var valor2 = (valor1 - 32) * 5 / 9 + 273.15
         var sigla = "°K"
     }
+    /* Fahrenheit para Fahrenheit */
+    else if (temp.toLowerCase() == "fahrenheit" && temp2.toLowerCase() == "fahrenheit") {
+        var valor2 = valor1
+        var sigla = "°F"
+    }
     /* Celcius para Fahrenheit */
     else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "fahrenheit") {
         var valor2 = (valor1 * 9) / 5 + 32
@@ -91,6 +96,11 @@ function convertTemperature() {
         var valor2 = (valor1 + 273.15)
         var sigla = "°K"
     }
+    /* Celcius para Celcius */
+    else if (temp.toLowerCase() == "celsius" && temp2.toLowerCase() == "celsius") {
+        var valor2 = valor1
+        var sigla = "°C"
+    }
     /* Kelvin para Fahrenheit */
     else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "fahrenheit") {
         var valor2 = (valor1 - 273.15) * 9 / 5 + 32
@@ -100,6 +110,11 @@ function convertTemperature() {
     else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "celsius") {
         var valor2 = (valor1 - 273.15)
         var sigla = "°C"
+    }
+    /* Kelvin para Kelvin  */
+    else if (temp.toLowerCase() == "kelvin" && temp2.toLowerCase() == "kelvin") {
+        var valor2 = valor1
+        var sigla = "°K"
     }
 
     /* Exibição */
@@ -128,6 +143,11 @@ function convertTime() {
         var valor2 = valor1 * 3600
         var sigla = "seg"
     }
+    /* Hora em Hora */
+    else if (tempo.toLowerCase() == "horas" && tempo2.toLowerCase() == "horas") {
+        var valor2 = valor1
+        var sigla = "hrs"
+    }
     /* Minuto em Hora */
     else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "horas") {
         var valor2 = valor1 / 60
@@ -138,6 +158,11 @@ function convertTime() {
         var valor2 = valor1 * 60
         var sigla = "seg"
     }
+    /* Minuto em Minuto */
+    else if (tempo.toLowerCase() == "minutos" && tempo2.toLowerCase() == "minutos") {
+        var valor2 = valor1
+        var sigla = "min"
+    }
     /* Segundo em Hora */
     else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "horas") {
         var valor2 = valor1 / 3600
@@ -147,6 +172,11 @@ function convertTime() {
     else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "minutos") {
         var valor2 = valor1 / 60
         var sigla = "min"
+    }
+    /* Segundo em Segundo */
+    else if (tempo.toLowerCase() == "segundos" && tempo2.toLowerCase() == "segundos") {
+        var valor2 = valor1
+        var sigla = "seg"
     }
 
     /* Exibição */
@@ -180,6 +210,11 @@ function convertMoney() {
         var valor2 = valor1 * 0.86
         var sigla = "EUR"
     }
+    /* Dólar em Dólar */
+    else if (moeda.toLowerCase() == "dólar" && moeda2.toLowerCase() == "dólar") {
+        var valor2 = valor1
+        var sigla = "USD"
+    }
     /* Libra em Dólar */
     else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "dólar") {
         var valor2 = valor1 * 1.37
@@ -194,6 +229,11 @@ function convertMoney() {
     else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "euro") {
         var valor2 = valor1 * 1.19
         var sigla = "EUR"
+    }
+    /* Libra em Libra */
+    else if (moeda.toLowerCase() == "libra" && moeda2.toLowerCase() == "libra") {
+        var valor2 = valor1
+        var sigla = "GBP"
     }
     /* Real em Dólar */
     else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "dólar") {
@@ -210,6 +250,11 @@ function convertMoney() {
         var valor2 = valor1 * 0.16
         var sigla = "EUR"
     }
+    /* Real em Real */
+    else if (moeda.toLowerCase() == "real" && moeda2.toLowerCase() == "real") {
+        var valor2 = valor1
+        var sigla = "BRL"
+    }
     /* Euro em Dólar */
     else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "dólar") {
         var valor2 = valor1 * 1.16
@@ -223,7 +268,12 @@ function convertMoney() {
     /* Euro em Real*/
     else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "real") {
         var valor2 = valor1 * 6.33
-        var sigla = "USD"
+        var sigla = "BRL"
+    }
+    /* Euro em Euro*/
+    else if (moeda.toLowerCase() == "euro" && moeda2.toLowerCase() == "euro") {
+        var valor2 = valor1
+        var sigla = "EUR"
     }
 
     /* Exibição */
