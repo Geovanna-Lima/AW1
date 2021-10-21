@@ -11,12 +11,14 @@ body {
     align-items: center;
     min-height: 100vh;
     min-width: 650px;
+    overflow: hidden;
 }
 
 /* ===== HEADER ===== */
 header {
     position: absolute;
     top: 0;
+    min-width: 650px;
     z-index: 1;
     height: 4.69rem;
     display: inline-flex; 
@@ -41,6 +43,11 @@ aside {
     position: absolute;
     left: 0;
     top: 4.69rem;
+    height: 100vh;
+}
+
+#menu {
+    height: 100vh;
 }
 
 .navigation {
