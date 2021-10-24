@@ -17,9 +17,10 @@ body {
 header {
     z-index: 1;
     height: 4.69rem;
-    display: inline-flex; 
+    display: inline-flex;
     background: #9FEFF3;
     width: 100%;
+    position: fixed;
 }
 
 /* title h1 */
@@ -36,10 +37,10 @@ span {
 
 /* navigation */
 aside {
-    position: absolute;
-    left: 0;
+    position: fixed;
     top: 4.69rem;
-    height: calc(100vh - 4.69rem);
+    height: revert;
+    z-index: 1;
 }
 
 #menu {
@@ -48,7 +49,7 @@ aside {
 
 .navigation {
     position: relative;
-    height: 100vh;
+    height: -webkit-fill-available;
     background: #9FEFF3;
     width: 5.19rem;
     box-shadow: 10px 0 0 #FFA9A6;
@@ -147,11 +148,12 @@ aside {
 
 /* ===== MAIN ===== */
 .content {
-    display: grid;
-    place-items: center;
-    width: 100%;
+    display: flex;
+    top: 4.69rem;
     transition: ease 0.4s;
-    width: calc(100% + 5.19rem);
+    width: calc(100% - 5.19rem);
+    justify-content: center;
+    margin-left: auto;
 }
 
 .content.show {
@@ -166,6 +168,7 @@ aside {
     border-radius: 5px;
     padding: 3rem;
     box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+    margin-top: 10rem;
 }
 
 #convertMoney {
@@ -262,11 +265,12 @@ h4.titleResult{
 /* ===== FOOTER===== */
 footer {
     text-align: center;
-    bottom: 0;
-    right: 0;
+    position: relative;
     margin-top: 2rem;
+    top: 5rem;
     transition: ease 0.4s;
-    width: calc(100% + 5.19rem);
+    margin-left: auto;
+    width: calc(100% - 5.19rem);
 }
 
 footer.show {
@@ -400,6 +404,10 @@ footer.show {
 
     #convert {
         margin-bottom: 0.7rem;
+    }
+
+    #line {
+        width: 90%;
     }
 
     footer {
