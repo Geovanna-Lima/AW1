@@ -427,3 +427,29 @@ footer.show {
         top: 3.5rem;
     }
 }
+
+@media screen and (max-height: 790px) {
+    #convertMoney, 
+    #convertTemperature, 
+    #convertMeasures, 
+    #convertTime {
+        margin-top: 15rem;
+    }
+
+    footer {
+        top: 10rem;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    #convertMoney, 
+    #convertTemperature, 
+    #convertMeasures, 
+    #convertTime {
+        margin-top: 20rem;
+    }
+
+    footer {
+        top: 15rem;
+    }
+}
