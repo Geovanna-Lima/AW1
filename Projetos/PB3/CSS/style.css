@@ -7,16 +7,14 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    display: flex;
     align-items: center;
     min-height: 100vh;
     min-width: 650px;
+    flex-wrap: wrap;
 }
 
 /* ===== HEADER ===== */
 header {
-    position: absolute;
-    top: 0;
     z-index: 1;
     height: 4.69rem;
     display: inline-flex; 
@@ -50,7 +48,7 @@ aside {
 
 .navigation {
     position: relative;
-    height: calc(100vh - 4.69rem);
+    height: 100vh;
     background: #9FEFF3;
     width: 5.19rem;
     box-shadow: 10px 0 0 #FFA9A6;
@@ -58,6 +56,7 @@ aside {
     overflow-x: hidden;
     justify-content: left;
     transition: ease 0.4s;
+    z-index: 1;
 }
 
 .navigation.show {
@@ -150,13 +149,13 @@ aside {
 .content {
     display: grid;
     place-items: center;
-    margin-left: auto;
-    width: calc(100% - 83px);
+    width: 100%;
     transition: ease 0.4s;
+    width: calc(100% + 5.19rem);
 }
 
 .content.show {
-    width: calc(100% - 15.625rem);
+    width: calc(100% + 15.625rem);
 }
 
 /* content conversion */
@@ -263,9 +262,15 @@ h4.titleResult{
 /* ===== FOOTER===== */
 footer {
     text-align: center;
-    position: absolute;
     bottom: 0;
-    width: calc(90vw - 15.625rem);
+    right: 0;
+    margin-top: 2rem;
+    transition: ease 0.4s;
+    width: calc(100% + 5.19rem);
+}
+
+footer.show {
+    width: calc(100% + 15.625rem);
 }
 
 #line {
@@ -296,8 +301,8 @@ footer {
     #convertMeasures,
     #convertTime {
         width: 50rem;
-        top: 4.69rem;
         position: relative;
+        margin-top: 2rem;
     }
 
     .inputValue {
@@ -337,13 +342,20 @@ footer {
     }
 
     .content {
-        margin-right: auto;
-        width: calc(100% + 15.625rem);
+        width: 100%;
     }
 
     .content.show {
         width: 100%;
         opacity: 40%;
+    }
+    
+    footer {
+        width: 100%;
+    }
+
+    footer.show {
+        width: 100%;
     }
 }
 
@@ -379,6 +391,7 @@ footer {
     #convertTime {
         width: 100vw;
         box-shadow:none;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
     }
 
     input {
@@ -390,8 +403,6 @@ footer {
     }
 
     footer {
-        height: 1%;
-        position: relative;
-        margin-top: -1rem;
+        margin-top: 0;
     }
 }

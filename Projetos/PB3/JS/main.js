@@ -1,12 +1,14 @@
 /* ===== MENU ===== */
 const nav = document.querySelectorAll('.navigation')
 const content = document.querySelector('.content')
+const footer = document.querySelector('footer')
 
 function activeMenu() {
     nav.forEach((item) =>
         item.classList.toggle('show'),
     )
     content.classList.toggle('show')
+    footer.classList.toggle('show')
 }
 
 /* ===== NAVEGAÇÃO ===== */
