@@ -433,20 +433,37 @@ footer.show {
     }
 }
 
-@media screen and (max-height: 790px) {
+@media screen and (max-height: 736px) {
     #convertMoney, 
     #convertTemperature, 
     #convertMeasures, 
     #convertTime {
-        margin-top: 15rem;
+        margin-top: 13rem;
     }
 
     footer {
-        top: 10rem;
+        margin-top: 6rem;
     }
 }
 
-@media screen and (max-height: 640px) {
+@media screen and (max-height: 667px) {
+    #convertMoney, 
+    #convertTemperature, 
+    #convertMeasures, 
+    #convertTime {
+        margin-top: 16rem;
+    }
+
+    footer {
+        margin-top: 8rem;
+    }
+}
+
+@media screen and (max-height: 653px) {
+    header h1 {
+        font-size: 28px;
+    } 
+
     #convertMoney, 
     #convertTemperature, 
     #convertMeasures, 
@@ -455,6 +472,38 @@ footer.show {
     }
 
     footer {
-        top: 15rem;
+        margin-top: 11rem;
+    }
+}
+
+@media screen and (max-height: 640px) {
+    #convertMoney, 
+    #convertTemperature, 
+    #convertMeasures, 
+    #convertTime {
+        margin-top: 19rem;
+    }
+
+    footer {
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    footer {
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (max-height: 568px) {
+    #convertMoney, 
+    #convertTemperature, 
+    #convertMeasures, 
+    #convertTime {
+        margin-top: 22rem;
+    }
+
+    footer {
+        margin-top: 14rem;
     }
 }

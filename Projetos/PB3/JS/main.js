@@ -583,15 +583,84 @@ function revertMeasures() {
     document.getElementById("measureTwo").value = measure
 }
 
-var moneyConvert = document.getElementById('moneyConvert').value
-var small = document.getElementById('teste')
+/* ===== VALIDAR CAMPOS ===== */
+/* moeda */
+function valueMoney() {
+    var moneyConvert = document.getElementById('moneyConvert').value
+    var money = document.getElementById('money').value
+    var moneyTwo = document.getElementById('moneyTwo').value
+    var toCheck = false
 
-function valueOneNull() {
-    if (moneyConvert == '') {
-
+    if (moneyConvert === '') {
+        swal("É necessário digitar um valor!")
+    } else if ((money == '') || (moneyTwo == '')) {
+        swal("É necessário escolher uma opção!")
     } else {
+        toCheck = true
+    }
 
+    if (toCheck) {
         convertMoney()
+    }
+}
+
+/* temperatura */
+function valueTemperature() {
+    var temperatureConvert = document.getElementById('temperatureConvert').value
+    var temperature = document.getElementById('temperature').value
+    var temperatureTwo = document.getElementById('temperatureTwo').value
+    var toCheck = false
+
+    if (temperatureConvert === '') {
+        swal("É necessário digitar um valor!")
+    } else if ((temperature == '') || (temperatureTwo == '')) {
+        swal("É necessário escolher uma opção!")
+    } else {
+        toCheck = true
+    }
+
+    if (toCheck) {
+        convertTemperature()
+    }
+}
+
+/* medidas */
+function valueMeasures() {
+    var measuresConvert = document.getElementById('measuresConvert').value
+    var measure = document.getElementById('measure').value
+    var measureTwo = document.getElementById('measureTwo').value
+    var toCheck = false
+
+    if (measuresConvert === '') {
+        swal("É necessário digitar um valor!")
+    } else if ((measure == '') || (measureTwo == '')) {
+        swal("É necessário escolher uma opção!")
+    } else {
+        toCheck = true
+    }
+
+    if (toCheck) {
+        convertMeasures()
+    }
+}
+
+/* tempo */
+function valueTime() {
+    var timeConvert = document.getElementById('timeConvert').value
+    var time = document.getElementById('time').value
+    var timeTwo = document.getElementById('timeTwo').value
+    var toCheck = false
+
+    if (timeConvert === '') {
+        swal("É necessário digitar um valor!")
+    } else if ((time == '') || (timeTwo == '')) {
+        swal("É necessário escolher uma opção!")
+    } else {
+        toCheck = true
+    }
+
+    if (toCheck) {
+        convertTime()
     }
 }
 

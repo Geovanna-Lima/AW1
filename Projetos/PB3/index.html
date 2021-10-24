@@ -80,7 +80,7 @@
                     <p>Para:</p>
                     <input id="moneyTwo" list="typesMoney" placeholder="Escolha uma moeda">
                 </div>
-                <button id="convert" type="submit" onclick=valueOneNull()><i class="fas fa-undo-alt"></i></button>
+                <button id="convert" type="submit" onclick=valueMoney()><i class="fas fa-undo-alt"></i></button>
             </div>
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
@@ -122,7 +122,7 @@
                     <p>Para:</p>
                     <input id="temperatureTwo" list="typesTemperature" placeholder="Escolha uma temperatura">
                 </div>
-                <button id="convert" type="submit" onclick=convertTemperature()><i class="fas fa-undo-alt"></i></button>
+                <button id="convert" type="submit" onclick="valueTemperature()"><i class="fas fa-undo-alt"></i></button>
             </div>
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
@@ -170,7 +170,7 @@
                     <p>Para:</p>
                     <input id="measureTwo" list="typesMeasures" placeholder="Escolha uma medida">
                 </div>
-                <button id="convert" type="submit" onclick=convertMeasures()><i class="fas fa-undo-alt"></i></button>
+                <button id="convert" type="submit" onclick=valueMeasures()><i class="fas fa-undo-alt"></i></button>
             </div>
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
@@ -195,8 +195,7 @@
             <div class="inputValue">
                 <div class="value">
                     <p>Valor:</p>
-                    <input id="timeConvert" type="number" step="1"
-                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Insira o valor">
+                    <input id="timeConvert" type="number" step="1" placeholder="Insira o valor">
                 </div>
                 <div class="conversion">
                     <p>Converter de:</p>
@@ -212,7 +211,7 @@
                     <p>Para:</p>
                     <input id="timeTwo" list="typesTime" placeholder="Escolha uma unidade">
                 </div>
-                <button id="convert" type="submit" onclick=convertTime()><i class="fas fa-undo-alt"></i></button>
+                <button id="convert" type="submit" onclick=valueTime()><i class="fas fa-undo-alt"></i></button>
             </div>
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
@@ -239,6 +238,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./JS/main.js"></script>
     <script src="https://kit.fontawesome.com/3eecc79a6a.js" crossorigin="anonymous"></script>
 </body>
