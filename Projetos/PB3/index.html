@@ -63,7 +63,7 @@
                 <div class="value">
                     <p>Valor:</p>
                     <input id="moneyConvert" type="number" min="0" step=".01" autocomplete="off"
-                        placeholder="Insira o valor">
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Insira o valor">
                 </div>
                 <div class="conversion">
                     <p>Converter de:</p>
@@ -148,7 +148,8 @@
             <div class="inputValue">
                 <div class="value">
                     <p>Valor:</p>
-                    <input id="measuresConvert" type="number" min="0" step=".01" placeholder="Insira o valor">
+                    <input id="measuresConvert" type="number" min="0" step=".01"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Insira o valor">
                 </div>
                 <div class="conversion">
                     <p>Converter de:</p>
@@ -194,7 +195,8 @@
             <div class="inputValue">
                 <div class="value">
                     <p>Valor:</p>
-                    <input id="timeConvert" type="number" step="1" placeholder="Insira o valor">
+                    <input id="timeConvert" type="number" step="1"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Insira o valor">
                 </div>
                 <div class="conversion">
                     <p>Converter de:</p>

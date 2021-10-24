@@ -13,6 +13,11 @@ body {
     flex-wrap: wrap;
 }
 
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} 
+
 /* ===== HEADER ===== */
 header {
     z-index: 1;
@@ -49,7 +54,6 @@ aside {
 
 .navigation {
     position: relative;
-    height: -webkit-fill-available;
     background: #9FEFF3;
     width: 5.19rem;
     box-shadow: 10px 0 0 #FFA9A6;
