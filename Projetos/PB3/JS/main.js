@@ -582,3 +582,31 @@ function revertMeasures() {
     document.getElementById("measure").value = measureTwo
     document.getElementById("measureTwo").value = measure
 }
+
+var moneyConvert = document.getElementById('moneyConvert').value
+var small = document.getElementById('teste')
+
+function valueOneNull() {
+    if (moneyConvert == '') {
+
+    } else {
+
+        convertMoney()
+    }
+}
+
+/* const masks = {
+    temperature(value) {
+        return value
+            .replace(/(\d',')(\d)/, '')
+
+    }
+}
+
+document.querySelectorAll('input').forEach(($input) => {
+    const field = $input.dataset.js
+
+    $input.addEventListener('input', (e) => {
+        e.target.value = masks[field](e.target.value)
+    }, false)
+}) */
