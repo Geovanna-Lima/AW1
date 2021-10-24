@@ -55,20 +55,16 @@
     <!-- MAIN -->
     <main class="content">
         <div id="convertMoney">
-
             <div class="titleConvert">
                 <h2>Moeda</h2>
                 <p>Conversão de moedas (dólar, libra, real e euro)</p>
             </div>
-
             <div class="inputValue">
-
                 <div class="value">
                     <p>Valor:</p>
                     <input id="moneyConvert" type="number" min="0" step=".01" autocomplete="off"
                         placeholder="Insira o valor">
                 </div>
-
                 <div class="conversion">
                     <p>Converter de:</p>
                     <input id="money" list="typesMoney" placeholder="Escolha uma moeda">
@@ -79,52 +75,38 @@
                         <option value="Euro">
                     </datalist>
                 </div>
-
                 <button id="revert" type="submit" onclick="revertMoney()"><i class="fas fa-exchange-alt"></i></button>
-
                 <div class="result">
                     <p>Para:</p>
                     <input id="moneyTwo" list="typesMoney" placeholder="Escolha uma moeda">
                 </div>
-
                 <button id="convert" type="submit" onclick=convertMoney()><i class="fas fa-undo-alt"></i></button>
-
             </div>
-
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
-
                 <div class="cardDeck">
                     <div class="card">
                         <p>Conversão de: <span id="currencyConversion"></span> </p>
                         <p>Valor a converter: <span id="moneyConvertTwo"></span> </p>
                     </div>
-
                     <div class="card two">
                         <p>Para: <span id="currencyConversionTwo"></span></p>
                         <p>Resultado da conversão: <span id="finalCurrencyValue"></span></p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
         <div id="convertTemperature">
-
             <div class="titleConvert">
                 <h2>Temperatura</h2>
                 <p>Conversão de temperatura (fahrenheit, celcius e kelvin)</p>
             </div>
-
             <div class="inputValue">
-
                 <div class="value">
                     <p>Valor:</p>
                     <input id="temperatureConvert" type="number" step="1" placeholder="Insira o valor">
                 </div>
-
                 <div class="conversion">
                     <p>Converter de:</p>
                     <input id="temperature" list="typesTemperature" placeholder="Escolha uma temperatura">
@@ -134,54 +116,40 @@
                         <option value="Kelvin">
                     </datalist>
                 </div>
-
                 <button id="revert" type="submit" onclick="revertTemperature()"><i
                         class="fas fa-exchange-alt"></i></button>
-
                 <div class="result">
                     <p>Para:</p>
                     <input id="temperatureTwo" list="typesTemperature" placeholder="Escolha uma temperatura">
                 </div>
-
                 <button id="convert" type="submit" onclick=convertTemperature()><i class="fas fa-undo-alt"></i></button>
-
             </div>
-
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
-
                 <div class="cardDeck">
                     <div class="card">
                         <p>Conversão de: <span id="temperatureConversion"></span></p>
                         <p>Valor a converter: <span id="temperatureConvertTwo"></span></p>
                     </div>
-
                     <div class="card two">
                         <p>Para: <span id="temperatureConversionTwo"></span></p>
                         <p>Resultado da conversão: <span id="finalTemperatureValue"></span> </p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
         <div id="convertMeasures">
-
             <div class="titleConvert">
                 <h2>Medidas</h2>
                 <p>Conversão de medidas (quilômetro, hectômetro, decâmetro, metro, decímetro, centímetro e milímetro)
                 </p>
             </div>
-
             <div class="inputValue">
-
                 <div class="value">
                     <p>Valor:</p>
                     <input id="measuresConvert" type="number" min="0" step=".01" placeholder="Insira o valor">
                 </div>
-
                 <div class="conversion">
                     <p>Converter de:</p>
                     <input id="measure" list="typesMeasures" placeholder="Escolha uma medida">
@@ -195,53 +163,39 @@
                         <option value="Milímetro">
                     </datalist>
                 </div>
-
                 <button id="revert" type="submit" onclick="revertMeasures()"><i
                         class="fas fa-exchange-alt"></i></button>
-
                 <div class="result">
                     <p>Para:</p>
                     <input id="measureTwo" list="typesMeasures" placeholder="Escolha uma medida">
                 </div>
-
                 <button id="convert" type="submit" onclick=convertMeasures()><i class="fas fa-undo-alt"></i></button>
-
             </div>
-
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
-
                 <div class="cardDeck">
                     <div class="card">
                         <p>Conversão de: <span id="measureConversion"></span> </p>
                         <p>Valor a converter: <span id="measuresConvertTwo"></span> </p>
                     </div>
-
                     <div class="card two">
                         <p>Para: <span id="measureConversionTwo"></span></p>
                         <p>Resultado da conversão: <span id="finalMeasureValue"></span></p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
         <div id="convertTime">
-
             <div class="titleConvert">
                 <h2>Tempo</h2>
                 <p>Conversão de tempo (horas, minutos e segundos)</p>
             </div>
-
             <div class="inputValue">
-
                 <div class="value">
                     <p>Valor:</p>
                     <input id="timeConvert" type="number" step="1" placeholder="Insira o valor">
                 </div>
-
                 <div class="conversion">
                     <p>Converter de:</p>
                     <input id="time" list="typesTime" placeholder="Escolha uma unidade">
@@ -251,38 +205,30 @@
                         <option value="Segundos">
                     </datalist>
                 </div>
-
                 <button id="revert" type="submit" onclick="revertTime()"><i class="fas fa-exchange-alt"></i></button>
-
                 <div class="result">
                     <p>Para:</p>
                     <input id="timeTwo" list="typesTime" placeholder="Escolha uma unidade">
                 </div>
-
                 <button id="convert" type="submit" onclick=convertTime()><i class="fas fa-undo-alt"></i></button>
-
             </div>
-
             <div class="result">
                 <h4 class="titleResult">Resultado da conversão:</h4>
-
                 <div class="cardDeck">
                     <div class="card">
                         <p>Conversão de: <span id="timeConversion"></span></p>
                         <p>Valor a converter: <span id="timeConvertTwo"></span></p>
                     </div>
-
                     <div class="card two">
                         <p>Para: <span id="timeConversionTwo"></span></p>
                         <p>Resultado da conversão: <span id="finalTimeValue"></span> </p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </main>
+
+    <!-- FOOTER -->
     <footer>
         <div id="line"></div>
         <div class="description">
