@@ -664,12 +664,107 @@ function valueTime() {
     }
 }
 
-/* const masks = {
+/* ===== VERIFICAÇÃO VALORES DE CADA CAMPO ===== */
+const masks = {
+    /* moeda e medida*/
+    /* não pode entrar com valores negativos */
+    /* pode entrar com vírgula */
+    moneyMeasure(value) {
+        return value
+            .replace(/^[a-zA-Z]*$/, '')
+            .replace('-', '')
+            .replace('*', '')
+            .replace('+', '')
+            .replace('/', '')
+            .replace('_', '')
+            .replace('&', '')
+            .replace('(', '')
+            .replace(')', '')
+            .replace('!', '')
+            .replace('¨', '')
+            .replace('%', '')
+            .replace('$', '')
+            .replace('#', '')
+            .replace('@', '')
+            .replace('\"', '')
+            .replace('\'', '')
+            .replace('|', '')
+            .replace('\\', '')
+            .replace(':', '')
+            .replace(';', '')
+            .replace('°', '')
+            .replace('º', '')
+            .replace('ª', '')
+            .replace('^', '')
+            .replace('~', '')
+            .replace('`', '')
+            .replace('´', '')
+            .replace('§', '')
+            .replace('{', '')
+            .replace('}', '')
+            .replace('[', '')
+            .replace(']', '')
+            .replace('¹', '')
+            .replace('²', '')
+            .replace('³', '')
+            .replace('£', '')
+            .replace('¢', '')
+            .replace('¬', '')
+
+    },
+    /* temperatura */
+    /* pode entrar com valores negativos */
+    /* não pode entrar com vírgula */
     temperature(value) {
         return value
-            .replace(/(\d',')(\d)/, '')
-
-    }
+            .replace(/^[a-zA-Z]*$/, '')
+            .replace(',', '')
+            .replace('.', '')
+            .replace('*', '')
+            .replace('+', '')
+            .replace('/', '')
+            .replace('_', '')
+            .replace('&', '')
+            .replace('(', '')
+            .replace(')', '')
+            .replace('!', '')
+            .replace('¨', '')
+            .replace('%', '')
+            .replace('$', '')
+            .replace('#', '')
+            .replace('@', '')
+            .replace('\"', '')
+            .replace('\'', '')
+            .replace('|', '')
+            .replace('\\', '')
+            .replace(':', '')
+            .replace(';', '')
+            .replace('°', '')
+            .replace('º', '')
+            .replace('ª', '')
+            .replace('^', '')
+            .replace('~', '')
+            .replace('`', '')
+            .replace('´', '')
+            .replace('§', '')
+            .replace('{', '')
+            .replace('}', '')
+            .replace('[', '')
+            .replace(']', '')
+            .replace('¹', '')
+            .replace('²', '')
+            .replace('³', '')
+            .replace('£', '')
+            .replace('¢', '')
+            .replace('¬', '')
+    },
+    /* tempo */
+    /* não pode entrar com vírgula */
+    /* não pode entrar com valores negativos */
+    time(value) {
+        return value
+            .replace(/\D/g, '')
+    },
 }
 
 document.querySelectorAll('input').forEach(($input) => {
@@ -678,4 +773,4 @@ document.querySelectorAll('input').forEach(($input) => {
     $input.addEventListener('input', (e) => {
         e.target.value = masks[field](e.target.value)
     }, false)
-}) */
+})
