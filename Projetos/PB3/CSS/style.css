@@ -13,7 +13,8 @@ body {
     flex-wrap: wrap;
 }
 
-input:focus {
+input:focus,
+select:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
 } 
@@ -205,12 +206,22 @@ aside {
     align-items: end;
 }
 
-input {
+input,
+select {
     width: 17.5rem;
     height: calc(1.5em + .75rem + 0.125rem);
     border-radius: 3px;
     border: 1px solid black;
     padding-left: 0.5rem;
+}
+
+select {
+    background: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
 }
 
 /* button */
@@ -319,7 +330,8 @@ footer.show {
         display: inline;
     }
 
-    input {
+    input,
+    select {
         width: 43.95rem;
     }
 
@@ -415,7 +427,8 @@ footer.show {
         padding: 1.5rem 1.5rem 1rem 1.5rem;
     }
 
-    input {
+    input,
+    select {
         width: 100%;
     }
 
