@@ -672,6 +672,7 @@ const masks = {
     moneyMeasure(value) {
         return value
             .replace(/[a-zA-Z]/, '')
+            .replace(' ', '')
             .replace('-', '')
             .replace('*', '')
             .replace('+', '')
@@ -718,6 +719,7 @@ const masks = {
     temperature(value) {
         return value
             .replace(/[a-zA-Z]/, '')
+            .replace(' ', '')
             .replace(',', '')
             .replace('.', '')
             .replace('*', '')
