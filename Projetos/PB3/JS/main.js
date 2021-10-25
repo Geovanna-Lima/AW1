@@ -85,11 +85,6 @@ function convertTemperature() {
         var valueTwo = (valueOne - 32) * 5 / 9 + 273.15
         var initials = "°K"
     }
-    /* Fahrenheit para Fahrenheit */
-    else if (temperature == "Fahrenheit" && temperatureTwo == "Fahrenheit") {
-        var valueTwo = valueOne
-        var initials = "°F"
-    }
     /* Celcius para Fahrenheit */
     else if (temperature == "Celsius" && temperatureTwo == "Fahrenheit") {
         var valueTwo = (valueOne * 9) / 5 + 32
@@ -100,11 +95,6 @@ function convertTemperature() {
         var valueTwo = (valueOne + 273.15)
         var initials = "°K"
     }
-    /* Celcius para Celcius */
-    else if (temperature == "Celsius" && temperatureTwo == "Celsius") {
-        var valueTwo = valueOne
-        var initials = "°C"
-    }
     /* Kelvin para Fahrenheit */
     else if (temperature == "Kelvin" && temperatureTwo == "Fahrenheit") {
         var valueTwo = (valueOne - 273.15) * 9 / 5 + 32
@@ -114,11 +104,6 @@ function convertTemperature() {
     else if (temperature == "Kelvin" && temperatureTwo == "Celsius") {
         var valueTwo = (valueOne - 273.15)
         var initials = "°C"
-    }
-    /* Kelvin para Kelvin  */
-    else if (temperature == "Kelvin" && temperatureTwo == "Kelvin") {
-        var valueTwo = valueOne
-        var initials = "°K"
     }
 
     /* Exibição */
@@ -149,11 +134,6 @@ function convertTime() {
         var valueTwo = valueOne * 3600
         var initials = "seg"
     }
-    /* Hora em Hora */
-    else if (time == "Horas" && timeTwo == "Horas") {
-        var valueTwo = valueOne
-        var initials = "hrs"
-    }
     /* Minuto em Hora */
     else if (time == "Minutos" && timeTwo == "Horas") {
         var valueTwo = valueOne / 60
@@ -164,11 +144,6 @@ function convertTime() {
         var valueTwo = valueOne * 60
         var initials = "seg"
     }
-    /* Minuto em Minuto */
-    else if (time == "Minutos" && timeTwo == "Minutos") {
-        var valueTwo = valueOne
-        var initials = "min"
-    }
     /* Segundo em Hora */
     else if (time == "Segundos" && timeTwo == "Horas") {
         var valueTwo = valueOne / 3600
@@ -178,11 +153,6 @@ function convertTime() {
     else if (time == "Segundos" && timeTwo == "Minutos") {
         var valueTwo = valueOne / 60
         var initials = "min"
-    }
-    /* Segundo em Segundo */
-    else if (time == "Segundos" && timeTwo == "Segundos") {
-        var valueTwo = valueOne
-        var initials = "seg"
     }
 
     /* Exibição */
@@ -224,13 +194,6 @@ function convertMoney() {
 
         document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (0.86 €)"
     }
-    /* Dólar em Dólar */
-    else if (money == "Dólar" && moneyTwo == "Dólar") {
-        var valueTwo = valueOne
-        var initials = "USD"
-
-        document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (US$1.00)"
-    }
     /* Libra em Dólar */
     else if (money == "Libra" && moneyTwo == "Dólar") {
         var valueTwo = valueOne * 1.37
@@ -251,13 +214,6 @@ function convertMoney() {
         var initials = "EUR"
 
         document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (1.19 €)"
-    }
-    /* Libra em Libra */
-    else if (money == "Libra" && moneyTwo == "Libra") {
-        var valueTwo = valueOne
-        var initials = "GBP"
-
-        document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (£1.00)"
     }
     /* Real em Dólar */
     else if (money == "Real" && moneyTwo == "Dólar") {
@@ -280,13 +236,6 @@ function convertMoney() {
 
         document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (0.16 €)"
     }
-    /* Real em Real */
-    else if (money == "Real" && moneyTwo == "Real") {
-        var valueTwo = valueOne
-        var initials = "BRL"
-
-        document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (R$1.00)"
-    }
     /* Euro em Dólar */
     else if (money == "Euro" && moneyTwo == "Dólar") {
         var valueTwo = valueOne * 1.16
@@ -308,13 +257,6 @@ function convertMoney() {
 
         document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (R$6.33)"
     }
-    /* Euro em Euro*/
-    else if (money == "Euro" && moneyTwo == "Euro") {
-        var valueTwo = valueOne
-        var initials = "EUR"
-
-        document.getElementById("currencyConversionTwo").innerHTML = moneyTwo + " (1.00 €)"
-    }
 
     /* Exibição */
     document.getElementById("finalCurrencyValue").innerHTML = valueTwo.toFixed(2) + " " + initials
@@ -333,13 +275,8 @@ function convertMeasures() {
     /* Conversão */
     var valueOne = parseFloat(document.getElementById("measuresConvert").value)
 
-    /* Quilômetro em Quilômetro  */
-    if (measure == "Quilômetro" && measureTwo == "Quilômetro") {
-        var valueTwo = valueOne * 1
-        var initials = "km"
-    }
     /* Quilômetro em Hectômetro */
-    else if (measure == "Quilômetro" && measureTwo == "Hectômetro") {
+    if (measure == "Quilômetro" && measureTwo == "Hectômetro") {
         var valueTwo = valueOne * 10
         var initials = "hm"
     }
@@ -373,11 +310,6 @@ function convertMeasures() {
         var valueTwo = valueOne * 0.1
         var initials = "km"
     }
-    /* Hectômetro em Hectômetro */
-    else if (measure == "Hectômetro" && measureTwo == "Hectômetro") {
-        var valueTwo = valueOne * 1
-        var initials = "hm"
-    }
     /* Hectômetro em Decâmetro */
     else if (measure == "Hectômetro" && measureTwo == "Decâmetro") {
         var valueTwo = valueOne * 10
@@ -407,11 +339,6 @@ function convertMeasures() {
     else if (measure == "Decâmetro" && measureTwo == "Hectômetro") {
         var valueTwo = valueOne * 0.1
         var initials = "hm"
-    }
-    /* Decâmetro em Decâmetro */
-    else if (measure == "Decâmetro" && measureTwo == "Decâmetro") {
-        var valueTwo = valueOne * 1
-        var initials = "dam"
     }
     /* Decâmetro em Metro */
     else if (measure == "Decâmetro" && measureTwo == "Metro") {
@@ -448,11 +375,6 @@ function convertMeasures() {
         var valueTwo = valueOne * 0.1
         var initials = "dam"
     }
-    /* Metro em Metro */
-    else if (measure == "Metro" && measureTwo == "metro") {
-        var valueTwo = valueOne * 1
-        var initials = "m"
-    }
     /* Metro em Decímetro */
     else if (measure == "Metro" && measureTwo == "Decímetro") {
         var valueTwo = valueOne * 10
@@ -487,11 +409,6 @@ function convertMeasures() {
     else if (measure == "Decímetro" && measureTwo == "Metro") {
         var valueTwo = valueOne * 0.1
         var initials = "m"
-    }
-    /* Decímetro em Decímetro */
-    else if (measure == "Decímetro" && measureTwo == "Decímetro") {
-        var valueTwo = valueOne * 1
-        var initials = "dm"
     }
     /* Decímetro em Centímetro */
     else if (measure == "Decímetro" && measureTwo == "Centímetro") {
@@ -528,11 +445,6 @@ function convertMeasures() {
         var valueTwo = valueOne * 0.1
         var initials = "dm"
     }
-    /* Centímetro em Centímetro */
-    else if (measure == "Centímetro" && measureTwo == "Centímetro") {
-        var valueTwo = valueOne * 1
-        var initials = "cm"
-    }
     /* Centímetro em Milímetro */
     else if (measure == "Centímetro" && measureTwo == "Milímetro") {
         var valueTwo = valueOne * 10
@@ -567,11 +479,6 @@ function convertMeasures() {
     else if (measure == "Milímetro" && measureTwo == "Centímetro") {
         var valueTwo = valueOne * 0.1
         var initials = "cm"
-    }
-    /* Milímetro em Milímetro */
-    else if (measure == "Milímetro" && measureTwo == "Milímetro") {
-        var valueTwo = valueOne * 1
-        var initials = "mm"
     }
 
     /* Exibição */
@@ -661,6 +568,8 @@ function valueMoney() {
         swal("É necessário digitar um valor!")
     } else if ((money == 'Escolha uma opção') || (moneyTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
+    } else if ((money == moneyTwo) || (moneyTwo == money)) {
+        swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
     }
@@ -683,6 +592,8 @@ function valueTemperature() {
         swal("É necessário digitar um valor!")
     } else if ((temperature == 'Escolha uma opção') || (temperatureTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
+    } else if ((temperature == temperatureTwo) || (temperatureTwo == temperature)) {
+        swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
     }
@@ -705,6 +616,8 @@ function valueMeasures() {
         swal("É necessário digitar um valor!")
     } else if ((measure == 'Escolha uma opção') || (measureTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
+    } else if ((measure == measureTwo) || (measureTwo == measure)) {
+        swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
     }
@@ -727,6 +640,8 @@ function valueTime() {
         swal("É necessário digitar um valor!")
     } else if ((time == 'Escolha uma opção') || (timeTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
+    } else if ((time == timeTwo) || (timeTwo == time)) {
+        swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
     }
