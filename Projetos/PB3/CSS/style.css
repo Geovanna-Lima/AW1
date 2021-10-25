@@ -55,7 +55,7 @@ aside {
 
 .navigation {
     position: relative;
-    height: -webkit-fill-available;
+    height: 100vh;
     background: #9FEFF3;
     width: 5.19rem;
     box-shadow: 10px 0 0 #FFA9A6;
