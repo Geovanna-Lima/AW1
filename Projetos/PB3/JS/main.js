@@ -671,7 +671,7 @@ const masks = {
     /* pode entrar com vírgula */
     moneyMeasure(value) {
         return value
-            .replace(/^[a-zA-Z]*$/, '')
+            .replace(/[a-zA-Z]/, '')
             .replace('-', '')
             .replace('*', '')
             .replace('+', '')
@@ -717,7 +717,7 @@ const masks = {
     /* não pode entrar com vírgula */
     temperature(value) {
         return value
-            .replace(/^[a-zA-Z]*$/, '')
+            .replace(/[a-zA-Z]/, '')
             .replace(',', '')
             .replace('.', '')
             .replace('*', '')
