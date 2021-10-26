@@ -63,25 +63,25 @@
                 <div class="value">
                     <p>Valor:</p>
                     <input id="moneyConvert" type="text" autocomplete="off" placeholder="Insira o valor"
-                        data-js="moneyMeasure">
+                        data-js="moneyMeasureTime">
                 </div>
                 <div class="conversion">
                     <label id="money" for="typesMoney">Converter de:</label>
                     <br>
                     <select id="typesMoney">
-                        <option value="" disabled selected>Escolha uma opção</option>
+                        <option value="Escolha" disabled selected>Escolha uma opção</option>
                         <option value="Dólar">Dólar</option>
                         <option value="Libra">Libra</option>
                         <option value="Real">Real</option>
                         <option value="Euro">Euro</option>
                     </select>
                 </div>
-                <button id="revert" type="submit" onclick="revertMoney()"><i class="fas fa-exchange-alt"></i></button>
+                <button id="revertMoney" type="submit"><i class="fas fa-exchange-alt"></i></button>
                 <div class="result">
                     <label id="moneyTwo" for="typesMoneyTwo">Para:</label>
                     <br>
                     <select id="typesMoneyTwo">
-                        <option value="" disabled selected>Escolha uma opção</option>
+                        <option value="Escolha" disabled selected>Escolha uma opção</option>
                         <option value="Dólar">Dólar</option>
                         <option value="Libra">Libra</option>
                         <option value="Real">Real</option>
@@ -126,8 +126,7 @@
                         <option value="Kelvin">Kelvin</option>
                     </select>
                 </div>
-                <button id="revert" type="submit" onclick="revertTemperature()"><i
-                        class="fas fa-exchange-alt"></i></button>
+                <button id="revertTemperature" type="submit"><i class="fas fa-exchange-alt"></i></button>
                 <div class="result">
                     <label id="temperatureTwo" for="typesTemperatureTwo">Para:</label>
                     <br>
@@ -167,7 +166,7 @@
                 <div class="value">
                     <p>Valor:</p>
                     <input id="measuresConvert" type="text" autocomplete="off" placeholder="Insira o valor"
-                        data-js="moneyMeasure">
+                        data-js="moneyMeasureTime">
                 </div>
                 <div class="conversion">
                     <label id="measure" for="typesMeasures">Converter de:</label>
@@ -183,8 +182,7 @@
                         <option value="Milímetro">Milímetro</option>
                     </select>
                 </div>
-                <button id="revert" type="submit" onclick="revertMeasures()"><i
-                        class="fas fa-exchange-alt"></i></button>
+                <button id="revertMeasure" type="submit"><i class="fas fa-exchange-alt"></i></button>
                 <div class="result">
                     <label id="measureTwo" for="typesMeasuresTwo">Para:</label>
                     <br>
@@ -224,7 +222,8 @@
             <div class="inputValue">
                 <div class="value">
                     <p>Valor:</p>
-                    <input id="timeConvert" type="text" autocomplete="off" placeholder="Insira o valor" data-js="time">
+                    <input id="timeConvert" type="text" autocomplete="off" placeholder="Insira o valor"
+                        data-js="moneyMeasureTime">
                 </div>
                 <div class="conversion">
                     <label id="time" for="typesTime">Converter de:</label>
@@ -236,7 +235,7 @@
                         <option value="Segundos">Segundos</option>
                     </select>
                 </div>
-                <button id="revert" type="submit" onclick="revertTime()"><i class="fas fa-exchange-alt"></i></button>
+                <button id="revertTime" type="submit"><i class="fas fa-exchange-alt"></i></button>
                 <div class="result">
                     <label id="timeTwo" for="typesTimeTwo">Para:</label>
                     <br>
@@ -274,9 +273,10 @@
         </div>
     </footer>
 
+    <script src="https://kit.fontawesome.com/3eecc79a6a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./JS/main.js"></script>
-    <script src="https://kit.fontawesome.com/3eecc79a6a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

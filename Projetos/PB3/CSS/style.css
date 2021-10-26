@@ -3,6 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #a7a7a7 #e2e0e0;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #e2e0e0;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #a7a7a7;
+    border-radius: 20px;
+    border: 3px solid #e2e0e0;
 }
 
 body {
@@ -225,7 +241,10 @@ select {
 }
 
 /* button */
-#revert, 
+#revertMoney, 
+#revertTemperature,
+#revertMeasure,
+#revertTime,
 #convert {
     width: 2.125rem;
     height: 2.125rem;
@@ -341,7 +360,10 @@ footer.show {
         margin-bottom: 1rem;
     }
 
-    #revert, 
+    #revertMoney, 
+    #revertTemperature,
+    #revertMeasure,
+    #revertTime,
     #convert  {
         margin-left: auto;
         margin-right: auto;

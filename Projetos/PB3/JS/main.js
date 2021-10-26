@@ -261,7 +261,7 @@ function convertMoney() {
     /* Exibição */
     document.getElementById("finalCurrencyValue").innerHTML = valueTwo.toFixed(2) + " " + initials
     document.getElementById("currencyConversion").innerHTML = money
-    document.getElementById("moneyConvertTwo").innerHTML = valueOne.toFixed(2)
+    document.getElementById("moneyConvertTwo").innerHTML = valueOne
 }
 
 /* Conversor de Medida */
@@ -489,53 +489,65 @@ function convertMeasures() {
 }
 
 /* ===== REVERTER ===== */
-/* revertendo temperatura */
-function revertTemperature() {
-    var temperatureValue = document.getElementById("typesTemperature")
-    var temperature = temperatureValue.options[temperatureValue.selectedIndex].text
-    var temperatureTwoValue = document.getElementById("typesTemperatureTwo")
-    var temperatureTwo = temperatureTwoValue.options[temperatureTwoValue.selectedIndex].text
-
-    /* Reverter */
-    temperatureValue.options[temperatureValue.selectedIndex].text = temperatureTwo
-    temperatureTwoValue.options[temperatureTwoValue.selectedIndex].text = temperature
-}
-
-/* revertendo tempo */
-function revertTime() {
-    var timeValue = document.getElementById("typesTime")
-    var time = timeValue.options[timeValue.selectedIndex].text
-    var timeTwoValue = document.getElementById("typesTimeTwo")
-    var timeTwo = timeTwoValue.options[timeTwoValue.selectedIndex].text
-
-    /* Reverter */
-    timeValue.options[timeValue.selectedIndex].text = timeTwo
-    timeTwoValue.options[timeTwoValue.selectedIndex].text = time
-}
-
 /* revertendo moeda */
-function revertMoney() {
-    var moneyValue = document.getElementById("typesMoney")
-    var money = moneyValue.options[moneyValue.selectedIndex].text
-    var moneyTwoValue = document.getElementById("typesMoneyTwo")
-    var moneyTwo = moneyTwoValue.options[moneyTwoValue.selectedIndex].text
+const revertMoney = $('#revertMoney')
 
-    /* Reverter */
-    moneyValue.options[moneyValue.selectedIndex].text = moneyTwo
-    moneyTwoValue.options[moneyTwoValue.selectedIndex].text = money
-}
+revertMoney.click((e) => {
+    let typesMoney = $('#typesMoney')
+    let typesMoneyVal = typesMoney.val()
+
+    let typesMoneyTwo = $('#typesMoneyTwo')
+    let typesMoneyTwoVal = typesMoneyTwo.val()
+
+    e.preventDefault();
+    typesMoney.val(typesMoneyTwoVal)
+    typesMoneyTwo.val(typesMoneyVal)
+})
+
+/* revertendo temperatura */
+const revertTemperature = $('#revertTemperature');
+
+revertTemperature.click((e) => {
+    let typesTemperature = $('#typesTemperature')
+    let typesTemperatureVal = typesTemperature.val()
+
+    let typesTemperatureTwo = $('#typesTemperatureTwo')
+    let typesTemperatureTwoVal = typesTemperatureTwo.val()
+
+    e.preventDefault();
+    typesTemperature.val(typesTemperatureTwoVal)
+    typesTemperatureTwo.val(typesTemperatureVal)
+})
 
 /* revertendo medida */
-function revertMeasures() {
-    var measureValue = document.getElementById("typesMeasures")
-    var measure = measureValue.options[measureValue.selectedIndex].text
-    var measureTwoValue = document.getElementById("typesMeasuresTwo")
-    var measureTwo = measureTwoValue.options[measureTwoValue.selectedIndex].text
+const revertMeasure = $('#revertMeasure');
 
-    /* Reverter */
-    measureValue.options[measureValue.selectedIndex].text = measureTwo
-    measureTwoValue.options[measureTwoValue.selectedIndex].text = measure
-}
+revertMeasure.click((e) => {
+    let typesMeasures = $('#typesMeasures')
+    let typesMeasuresVal = typesMeasures.val()
+
+    let typesMeasuresTwo = $('#typesMeasuresTwo')
+    let typesMeasuresTwoVal = typesMeasuresTwo.val()
+
+    e.preventDefault();
+    typesMeasures.val(typesMeasuresTwoVal)
+    typesMeasuresTwo.val(typesMeasuresVal)
+})
+
+/* revertendo tempo */
+const revertTime = $('#revertTime');
+
+revertTime.click((e) => {
+    let typesTime = $('#typesTime')
+    let typesTimeVal = typesTime.val()
+
+    let typesTimeTwo = $('#typesTimeTwo')
+    let typesTimeTwoVal = typesTimeTwo.val()
+
+    e.preventDefault();
+    typesTime.val(typesTimeTwoVal)
+    typesTimeTwo.val(typesTimeVal)
+})
 
 /* ===== VERIFICAÇÃO LIMITE DOS CAMPOS DE TEMPERATURA ===== */
 function verificationTemperature() {
@@ -570,6 +582,9 @@ function valueMoney() {
         swal("É necessário escolher uma opção!")
     } else if ((money == moneyTwo) || (moneyTwo == money)) {
         swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
+        const inicio = document.querySelector("#typesMoneyTwo > option:nth-child(1)").value
+        document.querySelector("#typesMoneyTwo > option:nth-child(1)").value = inicio
+        console.log(inicio)
     } else {
         toCheck = true
     }
@@ -656,7 +671,7 @@ const masks = {
     /* moeda e medida*/
     /* não pode entrar com valores negativos */
     /* pode entrar com vírgula */
-    moneyMeasure(value) {
+    moneyMeasureTime(value) {
         return value
             .replace(/[a-zA-Z]/, '')
             .replace(' ', '')
@@ -746,14 +761,7 @@ const masks = {
             .replace('£', '')
             .replace('¢', '')
             .replace('¬', '')
-    },
-    /* tempo */
-    /* não pode entrar com vírgula */
-    /* não pode entrar com valores negativos */
-    time(value) {
-        return value
-            .replace(/\D/g, '')
-    },
+    }
 }
 
 document.querySelectorAll('input').forEach(($input) => {
