@@ -670,7 +670,7 @@ function valueTime() {
 
 /* ===== VERIFICAÇÃO VALORES DE CADA CAMPO ===== */
 const masks = {
-    /* moeda e medida*/
+    /* moeda, medida e tempo */
     /* não pode entrar com valores negativos */
     /* pode entrar com vírgula */
     moneyMeasureTime(value) {
