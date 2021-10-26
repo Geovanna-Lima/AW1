@@ -582,8 +582,7 @@ function valueMoney() {
         swal("É necessário escolher uma opção!")
     } else if ((money == moneyTwo) || (moneyTwo == money)) {
         swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
-        const inicio = document.querySelector("#typesMoneyTwo > option:nth-child(1)").value
-        document.querySelector("#typesMoneyTwo > option:nth-child(1)").value = inicio
+        document.querySelector("#typesMoneyTwo").value = document.querySelector("#typesMoneyTwo > option:nth-child(1)").value;
         console.log(inicio)
     } else {
         toCheck = true
@@ -608,6 +607,7 @@ function valueTemperature() {
     } else if ((temperature == 'Escolha uma opção') || (temperatureTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
     } else if ((temperature == temperatureTwo) || (temperatureTwo == temperature)) {
+        document.querySelector("#typesTemperatureTwo").value = document.querySelector("#typesTemperatureTwo > option:nth-child(1)").value;
         swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
@@ -632,6 +632,7 @@ function valueMeasures() {
     } else if ((measure == 'Escolha uma opção') || (measureTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
     } else if ((measure == measureTwo) || (measureTwo == measure)) {
+        document.querySelector("#typesMeasuresTwo").value = document.querySelector("#typesMeasuresTwo > option:nth-child(1)").value;
         swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
@@ -656,6 +657,7 @@ function valueTime() {
     } else if ((time == 'Escolha uma opção') || (timeTwo == 'Escolha uma opção')) {
         swal("É necessário escolher uma opção!")
     } else if ((time == timeTwo) || (timeTwo == time)) {
+        document.querySelector("#typesTimeTwo").value = document.querySelector("#typesTimeTwo > option:nth-child(1)").value;
         swal('Os campos "Converter de:" e "Para:" não podem ter o mesmo valor.')
     } else {
         toCheck = true
