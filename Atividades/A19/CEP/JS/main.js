@@ -10,12 +10,25 @@ btn.addEventListener('click', event => {
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(resp => resp.json())
         .then(dadosCEP => {
-            inputRoad.value = dadosCEP.logradouro
-            inputDistrict.value = dadosCEP.bairro
-            inputCity.value = dadosCEP.localidade
-            inputUf.value = dadosCEP.uf
+            if (dadosCEP.logradouro && dadosCEP.bairro && dadosCEP.localidade && dadosCEP.uf) {
+                inputRoad.value = dadosCEP.logradouro
+                inputDistrict.value = dadosCEP.bairro
+                inputCity.value = dadosCEP.localidade
+                inputUf.value = dadosCEP.uf
+            }
+            else {
+                inputRoad.value = "CEP inválido!"
+                inputDistrict.value = "CEP inválido!"
+                inputCity.value = "CEP inválido!"
+                inputUf.value = "CEP inválido!"
+            }
         })
-        .catch(reject => console.log(reject))
+        .catch(error => {
+            inputRoad.value = "CEP inválido!"
+            inputDistrict.value = "CEP inválido!"
+            inputCity.value = "CEP inválido!"
+            inputUf.value = "CEP inválido!"
+        })
 })
 
 const masks = {
