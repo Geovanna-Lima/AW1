@@ -7,9 +7,9 @@ const inputUf = document.querySelector('[name="uf"]')
 
 btn.addEventListener('click', event => {
     let cep = inputCEP.value
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-        .then(resp => resp.json())
-        .then(dadosCEP => {
+    axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => {
+            const dadosCEP = response.data
             if (dadosCEP.logradouro && dadosCEP.bairro && dadosCEP.localidade && dadosCEP.uf) {
                 inputRoad.value = dadosCEP.logradouro
                 inputDistrict.value = dadosCEP.bairro
@@ -17,10 +17,7 @@ btn.addEventListener('click', event => {
                 inputUf.value = dadosCEP.uf
             }
             else {
-                inputRoad.value = "CEP inválido!"
-                inputDistrict.value = "CEP inválido!"
-                inputCity.value = "CEP inválido!"
-                inputUf.value = "CEP inválido!"
+                throw new Error();
             }
         })
         .catch(error => {

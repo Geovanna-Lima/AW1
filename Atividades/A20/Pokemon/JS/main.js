@@ -14,10 +14,9 @@ function getElement(element) {
 }
 
 function requestPokeInfo(url, name) {
-    fetch(url + name)
-        .then(response => response.json())
-        .then(data => {
-            pokemon = data
+    axios.get(url + name)
+        .then(response => {
+            pokemon = response.data
         })
         .catch(err => console.log(err))
 }
