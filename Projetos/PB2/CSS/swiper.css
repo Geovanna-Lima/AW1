@@ -3,6 +3,7 @@
     width: 100%;
     padding-bottom: 3.125rem;
     padding-top: 1.25rem;
+    overflow-x: hidden;
 }
 
 .swiper-slide {
